@@ -6,7 +6,7 @@ namespace Assignment_PS1_4
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             HashSet<string> dictionary = new HashSet<string>();
             HashSet<string> approved = new HashSet<string>();
@@ -23,9 +23,9 @@ namespace Assignment_PS1_4
                 }
             }
 
-            // Read through the rest of the lines to create our "dictionary"
-            string line;
-            for(int i = 0; i < firstLineNums[0]; i++)
+            // Read through the number of lines to create our "dictionary"
+            string line = "";
+            for (int i = 0; i < firstLineNums[0]; i++)
             {
                 line = Console.ReadLine();
                 dictionary.Add(line);
