@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Assignment_PS1_4
 {
-    class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -13,7 +13,7 @@ namespace Assignment_PS1_4
             HashSet<string> rejected = new HashSet<string>();
 
             // Read the first line and parse the ints
-            string firstLine = Console.ReadLine();
+            string firstLine = args[0];
             List<int> firstLineNums = new List<int>();
             foreach (string num in firstLine.Split(new char[] { ' ' }))
             {
@@ -23,12 +23,10 @@ namespace Assignment_PS1_4
                 }
             }
 
-            // Read through the number of lines to create our "dictionary"
-            string line = "";
-            for (int i = 0; i < firstLineNums[0]; i++)
+            // Read through the number of lines to create our "dictionary"            
+            for (int i = 1; i < firstLineNums[0]; i++)
             {
-                line = Console.ReadLine();
-                dictionary.Add(line);
+                dictionary.Add(args[i]);
             }
 
             // count/print anagrams
@@ -47,7 +45,7 @@ namespace Assignment_PS1_4
                 }
             }
 
-            Console.WriteLine(approved.Count);
+            //Console.WriteLine(approved.Count);
         }
     }
 }

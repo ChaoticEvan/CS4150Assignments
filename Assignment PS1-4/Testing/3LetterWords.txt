@@ -1,0 +1,2000 @@
+zax	
+zek	
+biz	
+coq
+coz	
+fez	
+fiz	
+jab	
+jam	
+jaw	
+jib	
+jim
+job	
+jow	
+jug	
+pyx	
+waz
+wiz	
+zap	
+zip	
+haj	
+jag	
+jay	
+jig	
+jog	
+joy	
+jun	
+kex	
+vex	
+vox	
+zag	
+zig	
+adz	
+box	
+cox	
+dzo
+fax	
+fix	
+fox	
+jeu	
+jin	
+jol
+jus	
+jut	
+loq
+max	
+mix	
+pax	
+pix	
+pox	
+qua	
+que
+quo
+suq	
+wax	
+zed	
+zen	
+zin	
+azo	
+bff
+cwm	
+dux
+esq
+gox	
+hex	
+jar	
+jee	
+jet	
+joe	
+jot	
+lux	
+oxy	
+qat	
+qis	
+raj	
+saz
+seq
+sez	
+soz
+taj	
+zas	
+zee	
+zes
+zit	
+zoa	
+zoo	
+dex	
+hmm	
+lax	
+lex	
+lox	
+nix	
+tux	
+vav
+axe	
+bub
+bum
+cub
+cup
+fub
+guv
+gym
+hyp	
+ick
+kab
+kaf	
+kef	
+kep
+kif	
+kip
+kob
+kop
+mum
+oxo	
+pub
+pup
+rax	
+rex	
+sax	
+sex	
+six	
+sox	
+tax	
+umm
+ump
+vac
+vaw
+vim
+vow
+vug
+why	
+wok	
+xes
+xis	
+yuk	
+aff	9	9
+amp	7	9
+app	7	9
+aww	-	9
+bam	7	9
+bap	7	9
+bib	7	9
+bob	7	9
+bop	7	9
+bow	8	9
+bug	6	9
+buy	8	9
+cab	7	9
+cam	7	9
+cap	7	9
+caw	8	9
+cep	7	9
+cob	7	9
+cop	7	9
+cow	8	9
+ebb	7	9
+eff	9	9
+emf	-	9
+fab	8	9
+fem	8	9
+few	9	9
+fib	8	9
+fly	9	9
+fob	8	9
+fop	8	9
+fug	7	9
+gum	6	9
+hub	8	9
+hum	8	9
+hup	8	9
+iff	9	9
+imp	7	9
+ivy	9	9
+kay	10	9
+keg	8	9
+key	10	9
+khi	10	9
+kye	10	9
+luv	6	9
+mac	7	9
+map	7	9
+maw	8	9
+mem	7	9
+mew	8	9
+mib	7	9
+mic	7	9
+mim	7	9
+mob	7	9
+moc	7	9
+mom	7	9
+mop	7	9
+mow	8	9
+mug	6	9
+off	9	9
+pac	7	9
+pam	7	9
+pap	7	9
+paw	8	9
+pec	7	9
+pep	7	9
+pew	8	9
+pic	7	9
+pip	7	9
+ply	8	9
+pom	7	9
+pop	7	9
+pow	8	9
+pug	6	9
+sky	10	9
+tfw	-	9
+veg	7	9
+vey	-	9
+vig	7	9
+wab	8	9
+wap	8	9
+waw	9	9
+web	8	9
+wop	8	9
+wow	9	9
+wyn	9	9
+yak	10	9
+yok	10	9
+yum	8	9
+yup	8	9
+aby	8	8
+ach	-	8
+auk	7	8
+bag	6	8
+bah	8	8
+bay	8	8
+beg	6	8
+bey	8	8
+big	6	8
+bog	6	8
+boy	8	8
+bud	6	8
+bun	5	8
+bye	8	8
+bys	8	8
+cay	8	8
+chi	8	8
+cig	6	8
+cog	6	8
+coy	8	8
+cry	8	8
+cud	6	8
+dak	8	8
+dev	7	8
+dub	6	8
+dup	6	8
+elk	7	8
+fay	9	8
+feh	9	8
+fey	9	8
+fig	7	8
+flu	6	8
+fog	7	8
+foh	9	8
+foy	9	8
+fry	9	8
+fud	7	8
+fun	6	8
+gab	6	8
+gam	6	8
+gap	6	8
+gem	6	8
+gib	6	8
+gip	6	8
+gob	6	8
+guy	7	8
+ham	8	8
+hap	8	8
+haw	9	8
+hem	8	8
+hep	8	8
+hew	9	8
+hic	8	8
+him	8	8
+hip	8	8
+hob	8	8
+hop	8	8
+how	9	8
+hug	7	8
+huh	9	8
+ich	8	8
+icy	8	8
+ilk	7	8
+ink	7	8
+ked	-	8
+ken	7	8
+kid	8	8
+kin	7	8
+kue	7	8
+lav	6	8
+lek	7	8
+lev	6	8
+lum	5	8
+mag	6	8
+may	8	8
+meg	6	8
+meh	8	8
+mho	8	8
+mig	6	8
+mog	6	8
+mud	6	8
+mun	5	8
+nub	5	8
+ohm	8	8
+pah	8	8
+pay	8	8
+peg	6	8
+peh	8	8
+phi	8	8
+pho	8	8
+pht	8	8
+pig	6	8
+poh	8	8
+pry	8	8
+pud	6	8
+pul	5	8
+pun	5	8
+pya	8	8
+pye	8	8
+spy	8	8
+suk	7	8
+ugh	7	8
+uke	7	8
+van	6	8
+vau	6	8
+vid	7	8
+von	-	8
+wag	7	8
+way	9	8
+wha	9	8
+who	9	8
+wig	7	8
+wry	9	8
+wud	7	8
+wye	9	8
+yam	8	8
+yap	8	8
+yaw	9	8
+yep	8	8
+yew	9	8
+yip	8	8
+yob	8	8
+yom	8	8
+yow	9	8
+alb	5	7
+alp	5	7
+amu	5	7
+ark	7	7
+ask	7	7
+ava	6	7
+ave	6	7
+avo	6	7
+awl	6	7
+awn	6	7
+bad	6	7
+bal	5	7
+ban	5	7
+bed	6	7
+bel	5	7
+ben	5	7
+bid	6	7
+bin	5	7
+bod	6	7
+bur	5	7
+bus	5	7
+but	5	7
+cad	6	7
+can	5	7
+cel	5	7
+cod	6	7
+col	5	7
+con	5	7
+cue	5	7
+cur	5	7
+cut	5	7
+dab	6	7
+dam	6	7
+dap	6	7
+daw	7	7
+deb	6	7
+def	7	7
+dew	7	7
+dib	6	7
+dif	7	7
+dim	6	7
+dip	6	7
+doc	6	7
+dof	-	7
+dom	6	7
+dow	7	7
+dug	5	7
+duh	7	7
+ecu	5	7
+eek	7	7
+egg	5	7
+eke	7	7
+elf	6	7
+elm	5	7
+emu	5	7
+eve	6	7
+fad	7	7
+fan	6	7
+fed	7	7
+fen	6	7
+feu	6	7
+fid	7	7
+fil	6	7
+fin	6	7
+fon	6	7
+fou	6	7
+fur	6	7
+gag	5	7
+gah	-	7
+gay	7	7
+gey	7	7
+ghi	7	7
+gig	5	7
+gnu	4	7
+goy	7	7
+gul	4	7
+gun	4	7
+hag	7	7
+hah	9	7
+hay	9	7
+heh	9	7
+hey	9	7
+hog	7	7
+hoy	9	7
+hun	6	7
+igg	5	7
+irk	7	7
+kae	7	7
+kas	7	7
+kat	7	7
+kea	7	7
+kia	-	7
+kir	7	7
+kit	7	7
+koa	7	7
+koi	7	7
+kor	7	7
+kos	7	7
+lab	5	7
+lac	5	7
+lam	5	7
+lap	5	7
+law	6	7
+lib	5	7
+lip	5	7
+lob	5	7
+lop	5	7
+low	6	7
+lug	4	7
+mad	6	7
+man	5	7
+med	6	7
+mel	5	7
+men	5	7
+mid	6	7
+mil	5	7
+mod	6	7
+mol	5	7
+mon	5	7
+mus	5	7
+mut	5	7
+nab	5	7
+nam	5	7
+nap	5	7
+naw	6	7
+neb	5	7
+nef	-	7
+new	6	7
+nib	5	7
+nim	5	7
+nip	5	7
+nob	5	7
+nom	5	7
+now	6	7
+oak	7	7
+oka	7	7
+oke	7	7
+ova	6	7
+ovo	-	7
+owl	6	7
+own	6	7
+pad	6	7
+pal	5	7
+pan	5	7
+ped	6	7
+pen	5	7
+pin	5	7
+piu	5	7
+pod	6	7
+pol	5	7
+pur	5	7
+pus	5	7
+put	5	7
+rev	6	7
+rub	5	7
+rum	5	7
+shh	9	7
+shy	9	7
+ska	7	7
+ski	7	7
+sub	5	7
+sum	5	7
+sup	5	7
+tav	6	7
+thy	9	7
+tsk	7	7
+tub	5	7
+tup	5	7
+upo	5	7
+ups	5	7
+urb	5	7
+var	6	7
+vas	6	7
+vat	6	7
+vee	6	7
+vet	6	7
+via	6	7
+vie	6	7
+vis	6	7
+voe	6	7
+wad	7	7
+wan	6	7
+wed	7	7
+wen	6	7
+win	6	7
+won	6	7
+yag	7	7
+yah	9	7
+yay	9	7
+yeh	9	7
+aba	5	6
+abs	5	6
+ace	5	6
+act	5	6
+aft	6	6
+aim	5	6
+ama	5	6
+ami	5	6
+any	6	6
+ape	5	6
+apt	5	6
+arb	5	6
+arc	5	6
+arf	6	6
+arm	5	6
+asp	5	6
+awa	6	6
+awe	6	6
+baa	5	6
+bae	-	6
+bar	5	6
+bas	5	6
+bat	5	6
+bee	5	6
+bet	5	6
+bio	5	6
+bis	5	6
+bit	5	6
+boa	5	6
+boo	5	6
+bos	5	6
+bot	5	6
+bra	5	6
+bro	5	6
+brr	5	6
+car	5	6
+cat	5	6
+cee	5	6
+cis	5	6
+coo	5	6
+cor	5	6
+cos	5	6
+cot	5	6
+dag	5	6
+dah	7	6
+day	7	6
+dey	7	6
+dig	5	6
+dog	5	6
+dry	7	6
+dud	5	6
+dun	4	6
+dye	7	6
+edh	7	6
+efs	6	6
+eft	6	6
+eme	5	6
+ems	5	6
+eng	4	6
+ewe	6	6
+far	6	6
+fas	6	6
+fat	6	6
+fee	6	6
+fer	6	6
+fet	6	6
+fie	6	6
+fir	6	6
+fit	6	6
+foe	6	6
+for	6	6
+fro	6	6
+gad	5	6
+gal	4	6
+gan	4	6
+ged	5	6
+gel	4	6
+gen	4	6
+gid	5	6
+gin	4	6
+god	5	6
+gua	-	6
+gut	4	6
+had	7	6
+hen	6	6
+hid	7	6
+hin	6	6
+hod	7	6
+hon	6	6
+hue	6	6
+hut	6	6
+ice	5	6
+ifs	6	6
+ism	5	6
+lag	4	6
+lay	6	6
+leg	4	6
+ley	6	6
+log	4	6
+lye	6	6
+maa	-	6
+mae	5	6
+mar	5	6
+mas	5	6
+mat	5	6
+met	5	6
+mir	5	6
+mis	5	6
+moa	5	6
+moo	5	6
+mor	5	6
+mos	5	6
+mot	5	6
+nag	4	6
+nah	6	6
+nay	6	6
+nog	4	6
+noh	6	6
+nth	6	6
+nun	3	6
+oaf	6	6
+oba	5	6
+obe	5	6
+obi	5	6
+oca	5	6
+oft	6	6
+oms	5	6
+ope	5	6
+ops	5	6
+opt	5	6
+orb	5	6
+orc	5	6
+owe	6	6
+par	5	6
+pas	5	6
+pat	5	6
+pea	5	6
+pee	5	6
+per	5	6
+pes	5	6
+pet	5	6
+pia	5	6
+pie	5	6
+pis	5	6
+pit	5	6
+poi	5	6
+poo	5	6
+pot	5	6
+pro	5	6
+psi	5	6
+ram	5	6
+rap	5	6
+raw	6	6
+reb	5	6
+rec	5	6
+ref	6	6
+rem	5	6
+rep	5	6
+rib	5	6
+rif	6	6
+rim	5	6
+rip	5	6
+rob	5	6
+roc	5	6
+rom	5	6
+row	6	6
+rug	4	6
+ryu	6	6
+sab	5	6
+sac	5	6
+sap	5	6
+saw	6	6
+sec	5	6
+sew	6	6
+sib	5	6
+sic	5	6
+sim	5	6
+sip	5	6
+sly	6	6
+sob	5	6
+sop	5	6
+sow	6	6
+spa	5	6
+syn	6	6
+tab	5	6
+tam	5	6
+tap	5	6
+taw	6	6
+tew	6	6
+tic	5	6
+tip	5	6
+tom	5	6
+top	5	6
+tow	6	6
+tug	4	6
+twa	6	6
+two	6	6
+ulu	3	6
+wae	6	6
+war	6	6
+was	6	6
+wat	6	6
+wee	6	6
+wet	6	6
+wis	6	6
+wit	6	6
+woe	6	6
+woo	6	6
+wos	6	6
+wot	6	6
+yen	6	6
+yin	6	6
+yod	7	6
+yon	6	6
+you	6	6
+aah	6	5
+add	5	5
+aga	4	5
+age	4	5
+ago	4	5
+aha	6	5
+ahi	6	5
+ahs	6	5
+all	3	5
+alu	-	5
+and	4	5
+ash	6	5
+aye	6	5
+ays	6	5
+dad	5	5
+dal	4	5
+del	4	5
+den	4	5
+did	5	5
+din	4	5
+dol	4	5
+don	4	5
+due	4	5
+dui	4	5
+duo	4	5
+ego	4	5
+eld	4	5
+ell	3	5
+end	4	5
+erg	4	5
+eth	6	5
+eye	6	5
+gae	4	5
+gar	4	5
+gas	4	5
+gat	4	5
+gee	4	5
+get	4	5
+gie	4	5
+git	4	5
+goa	4	5
+goo	4	5
+gor	4	5
+got	4	5
+hae	6	5
+hao	6	5
+has	6	5
+hat	6	5
+her	6	5
+hes	6	5
+het	6	5
+hie	6	5
+his	6	5
+hit	6	5
+hoe	6	5
+hot	6	5
+ill	3	5
+inn	3	5
+lad	4	5
+led	4	5
+leu	3	5
+lid	4	5
+lin	3	5
+lsd	-	5
+nan	3	5
+nil	3	5
+nod	4	5
+nus	3	5
+nut	3	5
+odd	5	5
+oho	6	5
+ohs	6	5
+old	4	5
+ooh	6	5
+oud	4	5
+rag	4	5
+rah	6	5
+ray	6	5
+reg	4	5
+rho	6	5
+rig	4	5
+run	3	5
+rya	6	5
+rye	6	5
+sag	4	5
+say	6	5
+seg	4	5
+sha	6	5
+she	6	5
+shi	-	5
+soy	6	5
+sty	6	5
+sun	3	5
+tag	4	5
+teg	4	5
+the	6	5
+tho	6	5
+tog	4	5
+toy	6	5
+try	6	5
+tun	3	5
+tye	6	5
+udo	4	5
+uns	3	5
+urd	4	5
+urn	3	5
+yar	6	5
+yas	6	5
+yea	6	5
+yes	6	5
+yet	6	5
+aal	3	4
+ado	4	4
+ads	4	4
+aid	4	4
+ail	3	4
+ain	3	4
+ala	3	4
+ale	3	4
+als	3	4
+alt	3	4
+ana	3	4
+ane	3	4
+ani	3	4
+ant	3	4
+dee	4	4
+die	4	4
+dis	4	4
+dit	4	4
+doe	4	4
+dor	4	4
+dos	4	4
+dot	4	4
+eau	3	4
+eel	3	4
+els	3	4
+ens	3	4
+eon	3	4
+ern	3	4
+ids	4	4
+ins	3	4
+ion	3	4
+lar	3	4
+las	3	4
+lat	3	4
+lea	3	4
+lee	3	4
+lei	3	4
+let	3	4
+lie	3	4
+lis	3	4
+lit	3	4
+loo	3	4
+lot	3	4
+nae	3	4
+nee	3	4
+net	3	4
+nit	3	4
+noo	3	4
+nor	3	4
+nos	3	4
+not	3	4
+oda	4	4
+ode	4	4
+ods	4	4
+oil	3	4
+ole	3	4
+one	3	4
+ono	3	4
+ons	3	4
+our	3	4
+out	3	4
+rad	4	4
+ran	3	4
+red	4	4
+rid	4	4
+rin	3	4
+rod	4	4
+rue	3	4
+rut	3	4
+sad	4	4
+sal	3	4
+sau	3	4
+sel	3	4
+sen	3	4
+sin	3	4
+sod	4	4
+sol	3	4
+son	3	4
+sou	3	4
+sue	3	4
+tad	4	4
+tan	3	4
+tau	3	4
+ted	4	4
+tel	3	4
+ten	3	4
+til	3	4
+tin	3	4
+tod	4	4
+ton	3	4
+tui	3	4
+tut	3	4
+use	3	4
+uta	3	4
+ute	3	4
+uts	3	4
+aas	3	3
+air	3	3
+ais	3	3
+ait	3	3
+are	3	3
+ars	3	3
+art	3	3
+ass	3	3
+ate	3	3
+att	3	3
+ear	3	3
+eat	3	3
+era	3	3
+ere	3	3
+err	3	3
+zax	
+zek	
+biz	
+coq
+coz	
+fez	
+fiz	
+jab	
+jam	
+jaw	
+jib	
+jim
+job	
+jow	
+jug	
+pyx	
+waz
+wiz	
+zap	
+zip	
+haj	
+jag	
+jay	
+jig	
+jog	
+joy	
+jun	
+kex	
+vex	
+vox	
+zag	
+zig	
+adz	
+box	
+cox	
+dzo
+fax	
+fix	
+fox	
+jeu	
+jin	
+jol
+jus	
+jut	
+loq
+max	
+mix	
+pax	
+pix	
+pox	
+qua	
+que
+quo
+suq	
+wax	
+zed	
+zen	
+zin	
+azo	
+bff
+cwm	
+dux
+esq
+gox	
+hex	
+jar	
+jee	
+jet	
+joe	
+jot	
+lux	
+oxy	
+qat	
+qis	
+raj	
+saz
+seq
+sez	
+soz
+taj	
+zas	
+zee	
+zes
+zit	
+zoa	
+zoo	
+dex	
+hmm	
+lax	
+lex	
+lox	
+nix	
+tux	
+vav
+axe	
+bub
+bum
+cub
+cup
+fub
+guv
+gym
+hyp	
+ick
+kab
+kaf	
+kef	
+kep
+kif	
+kip
+kob
+kop
+mum
+oxo	
+pub
+pup
+rax	
+rex	
+sax	
+sex	
+six	
+sox	
+tax	
+umm
+ump
+vac
+vaw
+vim
+vow
+vug
+why	
+wok	
+xes
+xis	
+yuk	
+aff	9	9
+amp	7	9
+app	7	9
+aww	-	9
+bam	7	9
+bap	7	9
+bib	7	9
+bob	7	9
+bop	7	9
+bow	8	9
+bug	6	9
+buy	8	9
+cab	7	9
+cam	7	9
+cap	7	9
+caw	8	9
+cep	7	9
+cob	7	9
+cop	7	9
+cow	8	9
+ebb	7	9
+eff	9	9
+emf	-	9
+fab	8	9
+fem	8	9
+few	9	9
+fib	8	9
+fly	9	9
+fob	8	9
+fop	8	9
+fug	7	9
+gum	6	9
+hub	8	9
+hum	8	9
+hup	8	9
+iff	9	9
+imp	7	9
+ivy	9	9
+kay	10	9
+keg	8	9
+key	10	9
+khi	10	9
+kye	10	9
+luv	6	9
+mac	7	9
+map	7	9
+maw	8	9
+mem	7	9
+mew	8	9
+mib	7	9
+mic	7	9
+mim	7	9
+mob	7	9
+moc	7	9
+mom	7	9
+mop	7	9
+mow	8	9
+mug	6	9
+off	9	9
+pac	7	9
+pam	7	9
+pap	7	9
+paw	8	9
+pec	7	9
+pep	7	9
+pew	8	9
+pic	7	9
+pip	7	9
+ply	8	9
+pom	7	9
+pop	7	9
+pow	8	9
+pug	6	9
+sky	10	9
+tfw	-	9
+veg	7	9
+vey	-	9
+vig	7	9
+wab	8	9
+wap	8	9
+waw	9	9
+web	8	9
+wop	8	9
+wow	9	9
+wyn	9	9
+yak	10	9
+yok	10	9
+yum	8	9
+yup	8	9
+aby	8	8
+ach	-	8
+auk	7	8
+bag	6	8
+bah	8	8
+bay	8	8
+beg	6	8
+bey	8	8
+big	6	8
+bog	6	8
+boy	8	8
+bud	6	8
+bun	5	8
+bye	8	8
+bys	8	8
+cay	8	8
+chi	8	8
+cig	6	8
+cog	6	8
+coy	8	8
+cry	8	8
+cud	6	8
+dak	8	8
+dev	7	8
+dub	6	8
+dup	6	8
+elk	7	8
+fay	9	8
+feh	9	8
+fey	9	8
+fig	7	8
+flu	6	8
+fog	7	8
+foh	9	8
+foy	9	8
+fry	9	8
+fud	7	8
+fun	6	8
+gab	6	8
+gam	6	8
+gap	6	8
+gem	6	8
+gib	6	8
+gip	6	8
+gob	6	8
+guy	7	8
+ham	8	8
+hap	8	8
+haw	9	8
+hem	8	8
+hep	8	8
+hew	9	8
+hic	8	8
+him	8	8
+hip	8	8
+hob	8	8
+hop	8	8
+how	9	8
+hug	7	8
+huh	9	8
+ich	8	8
+icy	8	8
+ilk	7	8
+ink	7	8
+ked	-	8
+ken	7	8
+kid	8	8
+kin	7	8
+kue	7	8
+lav	6	8
+lek	7	8
+lev	6	8
+lum	5	8
+mag	6	8
+may	8	8
+meg	6	8
+meh	8	8
+mho	8	8
+mig	6	8
+mog	6	8
+mud	6	8
+mun	5	8
+nub	5	8
+ohm	8	8
+pah	8	8
+pay	8	8
+peg	6	8
+peh	8	8
+phi	8	8
+pho	8	8
+pht	8	8
+pig	6	8
+poh	8	8
+pry	8	8
+pud	6	8
+pul	5	8
+pun	5	8
+pya	8	8
+pye	8	8
+spy	8	8
+suk	7	8
+ugh	7	8
+uke	7	8
+van	6	8
+vau	6	8
+vid	7	8
+von	-	8
+wag	7	8
+way	9	8
+wha	9	8
+who	9	8
+wig	7	8
+wry	9	8
+wud	7	8
+wye	9	8
+yam	8	8
+yap	8	8
+yaw	9	8
+yep	8	8
+yew	9	8
+yip	8	8
+yob	8	8
+yom	8	8
+yow	9	8
+alb	5	7
+alp	5	7
+amu	5	7
+ark	7	7
+ask	7	7
+ava	6	7
+ave	6	7
+avo	6	7
+awl	6	7
+awn	6	7
+bad	6	7
+bal	5	7
+ban	5	7
+bed	6	7
+bel	5	7
+ben	5	7
+bid	6	7
+bin	5	7
+bod	6	7
+bur	5	7
+bus	5	7
+but	5	7
+cad	6	7
+can	5	7
+cel	5	7
+cod	6	7
+col	5	7
+con	5	7
+cue	5	7
+cur	5	7
+cut	5	7
+dab	6	7
+dam	6	7
+dap	6	7
+daw	7	7
+deb	6	7
+def	7	7
+dew	7	7
+dib	6	7
+dif	7	7
+dim	6	7
+dip	6	7
+doc	6	7
+dof	-	7
+dom	6	7
+dow	7	7
+dug	5	7
+duh	7	7
+ecu	5	7
+eek	7	7
+egg	5	7
+eke	7	7
+elf	6	7
+elm	5	7
+emu	5	7
+eve	6	7
+fad	7	7
+fan	6	7
+fed	7	7
+fen	6	7
+feu	6	7
+fid	7	7
+fil	6	7
+fin	6	7
+fon	6	7
+fou	6	7
+fur	6	7
+gag	5	7
+gah	-	7
+gay	7	7
+gey	7	7
+ghi	7	7
+gig	5	7
+gnu	4	7
+goy	7	7
+gul	4	7
+gun	4	7
+hag	7	7
+hah	9	7
+hay	9	7
+heh	9	7
+hey	9	7
+hog	7	7
+hoy	9	7
+hun	6	7
+igg	5	7
+irk	7	7
+kae	7	7
+kas	7	7
+kat	7	7
+kea	7	7
+kia	-	7
+kir	7	7
+kit	7	7
+koa	7	7
+koi	7	7
+kor	7	7
+kos	7	7
+lab	5	7
+lac	5	7
+lam	5	7
+lap	5	7
+law	6	7
+lib	5	7
+lip	5	7
+lob	5	7
+lop	5	7
+low	6	7
+lug	4	7
+mad	6	7
+man	5	7
+med	6	7
+mel	5	7
+men	5	7
+mid	6	7
+mil	5	7
+mod	6	7
+mol	5	7
+mon	5	7
+mus	5	7
+mut	5	7
+nab	5	7
+nam	5	7
+nap	5	7
+naw	6	7
+neb	5	7
+nef	-	7
+new	6	7
+nib	5	7
+nim	5	7
+nip	5	7
+nob	5	7
+nom	5	7
+now	6	7
+oak	7	7
+oka	7	7
+oke	7	7
+ova	6	7
+ovo	-	7
+owl	6	7
+own	6	7
+pad	6	7
+pal	5	7
+pan	5	7
+ped	6	7
+pen	5	7
+pin	5	7
+piu	5	7
+pod	6	7
+pol	5	7
+pur	5	7
+pus	5	7
+put	5	7
+rev	6	7
+rub	5	7
+rum	5	7
+shh	9	7
+shy	9	7
+ska	7	7
+ski	7	7
+sub	5	7
+sum	5	7
+sup	5	7
+tav	6	7
+thy	9	7
+tsk	7	7
+tub	5	7
+tup	5	7
+upo	5	7
+ups	5	7
+urb	5	7
+var	6	7
+vas	6	7
+vat	6	7
+vee	6	7
+vet	6	7
+via	6	7
+vie	6	7
+vis	6	7
+voe	6	7
+wad	7	7
+wan	6	7
+wed	7	7
+wen	6	7
+win	6	7
+won	6	7
+yag	7	7
+yah	9	7
+yay	9	7
+yeh	9	7
+aba	5	6
+abs	5	6
+ace	5	6
+act	5	6
+aft	6	6
+aim	5	6
+ama	5	6
+ami	5	6
+any	6	6
+ape	5	6
+apt	5	6
+arb	5	6
+arc	5	6
+arf	6	6
+arm	5	6
+asp	5	6
+awa	6	6
+awe	6	6
+baa	5	6
+bae	-	6
+bar	5	6
+bas	5	6
+bat	5	6
+bee	5	6
+bet	5	6
+bio	5	6
+bis	5	6
+bit	5	6
+boa	5	6
+boo	5	6
+bos	5	6
+bot	5	6
+bra	5	6
+bro	5	6
+brr	5	6
+car	5	6
+cat	5	6
+cee	5	6
+cis	5	6
+coo	5	6
+cor	5	6
+cos	5	6
+cot	5	6
+dag	5	6
+dah	7	6
+day	7	6
+dey	7	6
+dig	5	6
+dog	5	6
+dry	7	6
+dud	5	6
+dun	4	6
+dye	7	6
+edh	7	6
+efs	6	6
+eft	6	6
+eme	5	6
+ems	5	6
+eng	4	6
+ewe	6	6
+far	6	6
+fas	6	6
+fat	6	6
+fee	6	6
+fer	6	6
+fet	6	6
+fie	6	6
+fir	6	6
+fit	6	6
+foe	6	6
+for	6	6
+fro	6	6
+gad	5	6
+gal	4	6
+gan	4	6
+ged	5	6
+gel	4	6
+gen	4	6
+gid	5	6
+gin	4	6
+god	5	6
+gua	-	6
+gut	4	6
+had	7	6
+hen	6	6
+hid	7	6
+hin	6	6
+hod	7	6
+hon	6	6
+hue	6	6
+hut	6	6
+ice	5	6
+ifs	6	6
+ism	5	6
+lag	4	6
+lay	6	6
+leg	4	6
+ley	6	6
+log	4	6
+lye	6	6
+maa	-	6
+mae	5	6
+mar	5	6
+mas	5	6
+mat	5	6
+met	5	6
+mir	5	6
+mis	5	6
+moa	5	6
+moo	5	6
+mor	5	6
+mos	5	6
+mot	5	6
+nag	4	6
+nah	6	6
+nay	6	6
+nog	4	6
+noh	6	6
+nth	6	6
+nun	3	6
+oaf	6	6
+oba	5	6
+obe	5	6
+obi	5	6
+oca	5	6
+oft	6	6
+oms	5	6
+ope	5	6
+ops	5	6
+opt	5	6
+orb	5	6
+orc	5	6
+owe	6	6
+par	5	6
+pas	5	6
+pat	5	6
+pea	5	6
+pee	5	6
+per	5	6
+pes	5	6
+pet	5	6
+pia	5	6
+pie	5	6
+pis	5	6
+pit	5	6
+poi	5	6
+poo	5	6
+pot	5	6
+pro	5	6
+psi	5	6
+ram	5	6
+rap	5	6
+raw	6	6
+reb	5	6
+rec	5	6
+ref	6	6
+rem	5	6
+rep	5	6
+rib	5	6
+rif	6	6
+rim	5	6
+rip	5	6
+rob	5	6
+roc	5	6
+rom	5	6
+row	6	6
+rug	4	6
+ryu	6	6
+sab	5	6
+sac	5	6
+sap	5	6
+saw	6	6
+sec	5	6
+sew	6	6
+sib	5	6
+sic	5	6
+sim	5	6
+sip	5	6
+sly	6	6
+sob	5	6
+sop	5	6
+sow	6	6
+spa	5	6
+syn	6	6
+tab	5	6
+tam	5	6
+tap	5	6
+taw	6	6
+tew	6	6
+tic	5	6
+tip	5	6
+tom	5	6
+top	5	6
+tow	6	6
+tug	4	6
+twa	6	6
+two	6	6
+ulu	3	6
+wae	6	6
+war	6	6
+was	6	6
+wat	6	6
+wee	6	6
+wet	6	6
+wis	6	6
+wit	6	6
+woe	6	6
+woo	6	6
+wos	6	6
+wot	6	6
+yen	6	6
+yin	6	6
+yod	7	6
+yon	6	6
+you	6	6
+aah	6	5
+add	5	5
+aga	4	5
+age	4	5
+ago	4	5
+aha	6	5
+ahi	6	5
+ahs	6	5
+all	3	5
+alu	-	5
+and	4	5
+ash	6	5
+aye	6	5
+ays	6	5
+dad	5	5
+dal	4	5
+del	4	5
+den	4	5
+did	5	5
+din	4	5
+dol	4	5
+don	4	5
+due	4	5
+dui	4	5
+duo	4	5
+ego	4	5
+eld	4	5
+ell	3	5
+end	4	5
+erg	4	5
+eth	6	5
+eye	6	5
+gae	4	5
+gar	4	5
+gas	4	5
+gat	4	5
+gee	4	5
+get	4	5
+gie	4	5
+git	4	5
+goa	4	5
+goo	4	5
+gor	4	5
+got	4	5
+hae	6	5
+hao	6	5
+has	6	5
+hat	6	5
+her	6	5
+hes	6	5
+het	6	5
+hie	6	5
+his	6	5
+hit	6	5
+hoe	6	5
+hot	6	5
+ill	3	5
+inn	3	5
+lad	4	5
+led	4	5
+leu	3	5
+lid	4	5
+lin	3	5
+lsd	-	5
+nan	3	5
+nil	3	5
+nod	4	5
+nus	3	5
+nut	3	5
+odd	5	5
+oho	6	5
+ohs	6	5
+old	4	5
+ooh	6	5
+oud	4	5
+rag	4	5
+rah	6	5
+ray	6	5
+reg	4	5
+rho	6	5
+rig	4	5
+run	3	5
+rya	6	5
+rye	6	5
+sag	4	5
+say	6	5
+seg	4	5
+sha	6	5
+she	6	5
+shi	-	5
+soy	6	5
+sty	6	5
+sun	3	5
+tag	4	5
+teg	4	5
+the	6	5
+tho	6	5
+tog	4	5
+toy	6	5
+try	6	5
+tun	3	5
+tye	6	5
+udo	4	5
+uns	3	5
+urd	4	5
+urn	3	5
+yar	6	5
+yas	6	5
+yea	6	5
+yes	6	5
+yet	6	5
+aal	3	4
+ado	4	4
+ads	4	4
+aid	4	4
+ail	3	4
+ain	3	4
+ala	3	4
+ale	3	4
+als	3	4
+alt	3	4
+ana	3	4
+ane	3	4
+ani	3	4
+ant	3	4
+dee	4	4
+die	4	4
+dis	4	4
+dit	4	4
+doe	4	4
+dor	4	4
+dos	4	4
+dot	4	4
+eau	3	4
+eel	3	4
+els	3	4
+ens	3	4
+eon	3	4
+ern	3	4
+ids	4	4
+ins	3	4
+ion	3	4
+lar	3	4
+las	3	4
+lat	3	4
+lea	3	4
+lee	3	4
+lei	3	4
+let	3	4
+lie	3	4
+lis	3	4
+lit	3	4
+loo	3	4
+lot	3	4
+nae	3	4
+nee	3	4
+net	3	4
+nit	3	4
+noo	3	4
+nor	3	4
+nos	3	4
+not	3	4
+oda	4	4
+ode	4	4
+ods	4	4
+oil	3	4
+ole	3	4
+one	3	4
+ono	3	4
+ons	3	4
+our	3	4
+out	3	4
+rad	4	4
+ran	3	4
+red	4	4
+rid	4	4
+rin	3	4
+rod	4	4
+rue	3	4
+rut	3	4
+sad	4	4
+sal	3	4
+sau	3	4
+sel	3	4
+sen	3	4
+sin	3	4
+sod	4	4
+sol	3	4
+son	3	4
+sou	3	4
+sue	3	4
+tad	4	4
+tan	3	4
+tau	3	4
+ted	4	4
+tel	3	4
+ten	3	4
+til	3	4
+tin	3	4
+tod	4	4
+ton	3	4
+tui	3	4
+tut	3	4
+use	3	4
+uta	3	4
+ute	3	4
+uts	3	4
+aas	3	3
+air	3	3
+ais	3	3
+ait	3	3
+are	3	3
+ars	3	3
+art	3	3
+ass	3	3
+ate	3	3
+att	3	3
+ear	3	3
+eat	3	3
+era	3	3
+ere	3	3
+err	3	3
+zax	
+zek	
+biz	
+coq
+coz	
+fez	
+fiz	
+jab	
+jam	
+jaw	
+jib	
+jim
+job	
+jow	
+jug	
+pyx	
+waz
+wiz	
+zap	
+zip	
+haj	
+jag	
+jay	
+jig	
+jog	
+joy	
+jun	
+kex	
+vex	
+vox	
+zag	
+zig	
+adz	
+box	
+cox	
+dzo
+fax	
+fix	
+fox	
+jeu	
+jin	
+jol
+jus	
+jut	
+loq
+max	
+mix	
+pax	
+pix	
+pox	
