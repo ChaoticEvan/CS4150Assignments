@@ -13,14 +13,15 @@ namespace PS2_4
             int numLines = -99;
             int numNumber = -99;
 
-            Int32.TryParse(firstLineTokens[0], out int i);
-            numLines = i;
+            if (Int32.TryParse(firstLineTokens[0], out int i))
+            {
+                numLines = i;
+            }
 
-
-            Int32.TryParse(firstLineTokens[1], out int j);
-
-            numNumber = j;
-
+            if (Int32.TryParse(firstLineTokens[1], out int j))
+            {
+                numNumber = j;
+            }
 
             HashSet<Tree> bsts = new HashSet<Tree>();
             string currLine = "";
@@ -33,7 +34,12 @@ namespace PS2_4
                 string[] currLineTokens = currLine.Split(' ');
                 for (int currNum = 0; currNum < numNumber; currNum++)
                 {
-                    Int32.TryParse(currLineTokens[currNum], out int k);
+                    int currVal = -99;
+                    if (Int32.TryParse(currLineTokens[currNum], out int k))
+                    {
+                        currVal = k;
+                    }
+
                     bst.insert(k);
 
                 }
@@ -48,6 +54,8 @@ namespace PS2_4
             }
 
             Console.WriteLine(patterns.Count);
+
+            Console.ReadLine();
         }
     }
 
@@ -111,10 +119,6 @@ namespace PS2_4
             if (this.root == null)
             {
                 return;
-            }
-            if (this.root != null)
-            {
-                pattern.Append("Root");
             }
             if (this.root.left != null)
             {
