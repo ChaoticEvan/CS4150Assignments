@@ -13,15 +13,14 @@ namespace PS2_4
             int numLines = -99;
             int numNumber = -99;
 
-            if (Int32.TryParse(firstLineTokens[0], out int i))
-            {
-                numLines = i;
-            }
+            Int32.TryParse(firstLineTokens[0], out int i);
+            numLines = i;
 
-            if (Int32.TryParse(firstLineTokens[1], out int j))
-            {
-                numNumber = j;
-            }
+
+            Int32.TryParse(firstLineTokens[1], out int j);
+
+            numNumber = j;
+
 
             HashSet<Tree> bsts = new HashSet<Tree>();
             string currLine = "";
@@ -34,12 +33,7 @@ namespace PS2_4
                 string[] currLineTokens = currLine.Split(' ');
                 for (int currNum = 0; currNum < numNumber; currNum++)
                 {
-                    int currVal = -99;
-                    if (Int32.TryParse(currLineTokens[currNum], out int k))
-                    {
-                        currVal = k;
-                    }
-
+                    Int32.TryParse(currLineTokens[currNum], out int k);
                     bst.insert(k);
 
                 }
@@ -54,8 +48,6 @@ namespace PS2_4
             }
 
             Console.WriteLine(patterns.Count);
-
-            Console.ReadLine();
         }
     }
 
@@ -120,16 +112,21 @@ namespace PS2_4
             {
                 return;
             }
+            if (this.root != null)
+            {
+                pattern.Append("Root");
+            }
+
+
             if (this.root.left != null)
             {
                 pattern.Append("L");
             }
+            traverseRec(this.root.left);
             if (this.root.right != null)
             {
                 pattern.Append("R");
             }
-
-            traverseRec(this.root.left);
             traverseRec(this.root.right);
         }
 
@@ -141,15 +138,17 @@ namespace PS2_4
                 return;
             }
 
+
+
             if (curr.left != null)
             {
                 pattern.Append("L");
             }
+            traverseRec(curr.left);
             if (curr.right != null)
             {
                 pattern.Append("R");
             }
-            traverseRec(curr.left);
             traverseRec(curr.right);
         }
     }
