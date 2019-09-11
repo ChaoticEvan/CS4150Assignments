@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PS3_6
 {
     class Program
     {
         public static int diameter;
+
         static void Main(string[] args)
         {
             string firstLine = Console.ReadLine();
@@ -19,17 +21,17 @@ namespace PS3_6
             Int32.TryParse(firstLineTokens[1], out int j);
             numLines = j;
 
-            if(numLines == 0)
+            if (numLines == 0)
             {
                 Console.WriteLine("NO");
                 return;
             }
-            else if(numLines == 1)
+            else if (numLines == 1)
             {
                 Console.WriteLine(1);
                 return;
             }
-            
+
 
             Star[] stars = new Star[numLines];
 
@@ -42,7 +44,7 @@ namespace PS3_6
                 stars[idx] = new Star(Int32.Parse(currLineTokens[0]), Int32.Parse(currLineTokens[1]));
             }
 
-            Star result = findMajority(stars, 0, stars.Length - 1, out int candidate);
+            findMajority(stars, 0, stars.Length - 1, out int candidate);
 
             if (candidate == 0)
             {
@@ -78,24 +80,34 @@ namespace PS3_6
                 else if (xCount == 0)
                 {
                     result = count(stars, lo, hi, y);
-                    if (result > (hi - lo) / 2)
+                    if (lo == 0 && result > (hi - lo + 1) / 2)
+                    {
+                        return y;
+                    }
+                    else if (lo != 0 && result > (hi - lo) / 2)
                     {
                         return y;
                     }
                     else
                     {
+                        result = 0;
                         return null;
                     }
                 }
                 else if (yCount == 0)
                 {
                     result = count(stars, lo, hi, x);
-                    if (result > (hi - lo) / 2)
+                    if (lo == 0 && result > (hi - lo + 1) / 2)
+                    {
+                        return x;
+                    }
+                    else if (lo != 0 && result > (hi - lo) / 2)
                     {
                         return x;
                     }
                     else
                     {
+                        result = 0;
                         return null;
                     }
                 }
@@ -104,12 +116,23 @@ namespace PS3_6
                     int xRes = count(stars, lo, hi, x);
                     int yRes = count(stars, lo, hi, y);
 
-                    if (xRes > hi - lo/ 2)
+                    if (lo != 0 && xRes > hi - lo / 2)
+                    {
+                        result = xRes;
+                        return x;
+
+                    }
+                    else if(lo == 0 && xRes > hi - lo + 1 /2)
                     {
                         result = xRes;
                         return x;
                     }
-                    else if (yRes > hi - lo/ 2)
+                    else if (lo != 0 && yRes > hi - lo / 2)
+                    {
+                        result = yRes;
+                        return y;
+                    }
+                    else if(lo == 0 && yRes > hi - lo + 1 / 2)
                     {
                         result = yRes;
                         return y;
@@ -125,23 +148,24 @@ namespace PS3_6
 
         private static int count(Star[] stars, int lo, int hi, Star candidate)
         {
-            if(candidate == null)
+            if (candidate == null)
             {
                 return 0;
             }
-            int result = 0;
+
+            HashSet<Star> galaxy = new HashSet<Star>();
             for (int idx = lo; idx <= hi; idx++)
             {
                 bool cond = Math.Pow((candidate.x - stars[idx].x), 2) + Math.Pow(candidate.y - stars[idx].y, 2) <= Math.Pow(diameter, 2);
                 if (cond)
                 {
-                    result++;
+                    galaxy.Add(stars[idx]);
                 }
             }
 
-            if (result > (hi - lo) / 2)
+            if (galaxy.Count > (hi - lo) / 2)
             {
-                return result;
+                return galaxy.Count;
             }
             else
             {
