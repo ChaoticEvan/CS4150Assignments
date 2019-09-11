@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS3-6", "PS3-6\PS3-6.csproj", "{8CDEA4F5-CC16-41FD-A9B7-EB2745B3E1E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CDEA4F5-CC16-41FD-A9B7-EB2745B3E1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDEA4F5-CC16-41FD-A9B7-EB2745B3E1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDEA4F5-CC16-41FD-A9B7-EB2745B3E1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDEA4F5-CC16-41FD-A9B7-EB2745B3E1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {458F1126-D91D-44F5-89DE-68A6B206863C}
+	EndGlobalSection
+EndGlobal
