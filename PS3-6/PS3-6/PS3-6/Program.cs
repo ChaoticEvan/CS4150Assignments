@@ -19,14 +19,26 @@ namespace PS3_6
             Int32.TryParse(firstLineTokens[1], out int j);
             numLines = j;
 
+            if(numLines == 0)
+            {
+                Console.WriteLine("NO");
+                return;
+            }
+            else if(numLines == 1)
+            {
+                Console.WriteLine(1);
+                return;
+            }
+            
+
             Star[] stars = new Star[numLines];
 
             string currLine = "";
             for (int idx = 0; idx < numLines; idx++)
             {
                 currLine = Console.ReadLine();
-
                 string[] currLineTokens = currLine.Split(' ');
+
                 stars[idx] = new Star(Int32.Parse(currLineTokens[0]), Int32.Parse(currLineTokens[1]));
             }
 
@@ -44,12 +56,12 @@ namespace PS3_6
 
         private static Star findMajority(Star[] stars, int lo, int hi, out int result)
         {
-            if (hi - lo == 0)
+            if (hi - lo < 0)
             {
                 result = 0;
                 return null;
             }
-            else if (hi - lo == 1)
+            else if (hi - lo == 0)
             {
                 result = 1;
                 return stars[0];
