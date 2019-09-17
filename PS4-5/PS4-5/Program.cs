@@ -11,6 +11,7 @@ namespace PS4_5
         {
             string currLine = "";
             graph = new Dictionary<string, Vertex>();
+            List<string> results = new List<string>();
 
             // Build out the vertexes given in the first
             // group of info
@@ -37,18 +38,32 @@ namespace PS4_5
                 graph[currLineTokens[1]].incomingEdges.Add(currLineTokens[0]);
             }
 
-            // 
+            // Loop through each trip and print out 
             currLine = Console.ReadLine();
             Int32.TryParse(currLine, out int numTrips);
             for(int k = 0; k < numTrips; k++)
-            {
+            {                
                 currLine = Console.ReadLine();
                 string[] currLineTokens = currLine.Split(' ');
 
                 string from = currLineTokens[0];
                 string to = currLineTokens[1];
 
+                // If origin and destination are the same
+                // Then cost is 0
+                if(from.Equals(to))
+                {
+                    results.Add("0");
+                    continue;
+                }
                 // TODO DO DJIKSTRA'S to find cheapest path from from to to
+            }
+
+
+            // Print out all results at the end
+            foreach (string s in results)
+            {
+                Console.WriteLine(s);
             }
         }
     }
