@@ -57,6 +57,46 @@ namespace PS4_5
                     continue;
                 }
                 // TODO DO DJIKSTRA'S to find cheapest path from from to to
+
+                Dictionary<string, int> dist = new Dictionary<string, int>();
+                Dictionary<string, string> prev = new Dictionary<string, string>();
+                foreach (string str in graph.Keys)
+                {
+                    dist.Add(str, Int32.MaxValue);
+                    prev.Add(str, "");
+                }
+
+                dist[from] = 0;
+
+                while(dist.Count != 0)
+                {
+                    string curr = FindMin(dist);
+                    if (!graph.ContainsKey(curr))
+                    {
+                        continue;
+                    }
+                    graph[curr].visited = true;
+                    int currVal = dist[curr];
+                    dist.Remove(curr);
+                    foreach (string neighbor in graph[curr].leavingEdges)
+                    {
+                        int alt = currVal + (currVal - dist[neighbor]);
+
+                        if(alt < dist[neighbor])
+                        {
+                            dist[neighbor] = alt;
+                            if(prev.ContainsKey(neighbor))
+                            {
+                                prev[neighbor] = curr;
+                            }
+                            else
+                            {
+                                prev.Add(neighbor, curr);
+                            }
+                        }
+                    }
+                }
+
             }
 
 
@@ -66,6 +106,21 @@ namespace PS4_5
                 Console.WriteLine(s);
             }
         }
+
+        private static string FindMin(Dictionary<string, int> g)
+        {
+            int minVal = Int32.MaxValue;
+            string res = "";
+            foreach(string str in g.Keys)
+            {
+                if(!graph[str].visited && g[str] < minVal)
+                {
+                    minVal = g[str];
+                    res = str;
+                }
+            }
+            return res;
+        }
     }
 
     class Vertex
@@ -74,6 +129,7 @@ namespace PS4_5
         public HashSet<string> incomingEdges { get; set; }
         public int cost { get; set; }
         public string name { get; set; }
+        public bool visited { get; set; }
 
         public Vertex(string name, int cost)
         {
