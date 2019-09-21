@@ -21,18 +21,6 @@ namespace PS3_6
             Int32.TryParse(firstLineTokens[1], out int j);
             numLines = j;
 
-            if (numLines == 0)
-            {
-                Console.WriteLine("NO");
-                return;
-            }
-            else if (numLines == 1)
-            {
-                Console.WriteLine(1);
-                return;
-            }
-
-
             Star[] stars = new Star[numLines];
 
             string currLine = "";
@@ -46,7 +34,17 @@ namespace PS3_6
 
             findMajority(stars, 0, stars.Length - 1, out int candidate);
 
-            if (candidate == 0)
+            if (numLines == 0)
+            {
+                Console.WriteLine("NO");
+                return;
+            }
+            else if (numLines == 1)
+            {
+                Console.WriteLine(1);
+                return;
+            }
+            else if (candidate == 0)
             {
                 Console.WriteLine("NO");
             }
@@ -58,12 +56,12 @@ namespace PS3_6
 
         private static Star findMajority(Star[] stars, int lo, int hi, out int result)
         {
-            if (hi - lo < 0)
+            if (hi - lo + 1 <= 0)
             {
                 result = 0;
                 return null;
             }
-            else if (hi - lo == 0)
+            else if (hi - lo + 1 == 1)
             {
                 result = 1;
                 return stars[0];
@@ -72,6 +70,7 @@ namespace PS3_6
             {
                 Star x = findMajority(stars, lo, (hi + lo) / 2, out int xCount);
                 Star y = findMajority(stars, ((hi + lo) / 2) + 1, hi, out int yCount);
+
                 if (xCount == 0 && yCount == 0)
                 {
                     result = 0;
@@ -80,12 +79,8 @@ namespace PS3_6
                 else if (xCount == 0)
                 {
                     result = count(stars, lo, hi, y);
-                    if (lo == 0 && result > (hi - lo + 1) / 2)
-                    {
-                        return y;
-                    }
-                    else if (lo != 0 && result > (hi - lo) / 2)
-                    {
+                    if (result > (hi - lo + 1) / 2)
+                    {                        
                         return y;
                     }
                     else
@@ -97,11 +92,7 @@ namespace PS3_6
                 else if (yCount == 0)
                 {
                     result = count(stars, lo, hi, x);
-                    if (lo == 0 && result > (hi - lo + 1) / 2)
-                    {
-                        return x;
-                    }
-                    else if (lo != 0 && result > (hi - lo) / 2)
+                    if (result > (hi - lo + 1) / 2)
                     {
                         return x;
                     }
@@ -116,23 +107,12 @@ namespace PS3_6
                     int xRes = count(stars, lo, hi, x);
                     int yRes = count(stars, lo, hi, y);
 
-                    if (lo != 0 && xRes > hi - lo / 2)
-                    {
-                        result = xRes;
-                        return x;
-
-                    }
-                    else if(lo == 0 && xRes > hi - lo + 1 /2)
+                    if (xRes > hi - lo + 1 / 2)
                     {
                         result = xRes;
                         return x;
                     }
-                    else if (lo != 0 && yRes > hi - lo / 2)
-                    {
-                        result = yRes;
-                        return y;
-                    }
-                    else if(lo == 0 && yRes > hi - lo + 1 / 2)
+                    else if (yRes > hi - lo + 1 / 2)
                     {
                         result = yRes;
                         return y;
@@ -153,13 +133,13 @@ namespace PS3_6
                 return 0;
             }
 
-            HashSet<Star> galaxy = new HashSet<Star>();
+            Stack<Star> galaxy = new Stack<Star>();
             for (int idx = lo; idx <= hi; idx++)
             {
-                bool cond = Math.Pow((candidate.x - stars[idx].x), 2) + Math.Pow(candidate.y - stars[idx].y, 2) <= Math.Pow(diameter, 2);
+                bool cond = Math.Pow(candidate.x - stars[idx].x, 2) + Math.Pow(candidate.y - stars[idx].y, 2) <= Math.Pow(diameter, 2);
                 if (cond)
                 {
-                    galaxy.Add(stars[idx]);
+                    galaxy.Push(stars[idx]);
                 }
             }
 
