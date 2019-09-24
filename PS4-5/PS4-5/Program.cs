@@ -5,7 +5,7 @@ namespace PS4_5
 {
     class Program
     {
-
+        static string currMin;
         static Dictionary<string, Vertex> graph;
         static void Main(string[] args)
         {
@@ -41,8 +41,8 @@ namespace PS4_5
             // Loop through each trip and print out 
             currLine = Console.ReadLine();
             Int32.TryParse(currLine, out int numTrips);
-            for(int k = 0; k < numTrips; k++)
-            {                
+            for (int k = 0; k < numTrips; k++)
+            {
                 currLine = Console.ReadLine();
                 string[] currLineTokens = currLine.Split(' ');
 
@@ -51,7 +51,7 @@ namespace PS4_5
 
                 // If origin and destination are the same
                 // Then cost is 0
-                if(from.Equals(to))
+                if (from.Equals(to))
                 {
                     results.Add("0");
                     continue;
@@ -59,44 +59,47 @@ namespace PS4_5
                 // TODO DO DJIKSTRA'S to find cheapest path from from to to
 
                 Dictionary<string, int> dist = new Dictionary<string, int>();
-                Dictionary<string, string> prev = new Dictionary<string, string>();
+                HashSet<string> l = new HashSet<string>();
                 foreach (string str in graph.Keys)
                 {
                     dist.Add(str, Int32.MaxValue);
-                    prev.Add(str, "");
+                    graph[str].visited = false;
+                    l.Add(str);
                 }
 
                 dist[from] = 0;
-
-                while(dist.Count != 0)
+                while (l.Count != 0)
                 {
-                    string curr = FindMin(dist);
-                    if (!graph.ContainsKey(curr))
-                    {
-                        continue;
-                    }
-                    graph[curr].visited = true;
-                    int currVal = dist[curr];
-                    dist.Remove(curr);
-                    foreach (string neighbor in graph[curr].leavingEdges)
-                    {
-                        int alt = currVal + (currVal - dist[neighbor]);
+                    currMin = FindMin(l, dist);
+                    l.Remove(currMin);
 
-                        if(alt < dist[neighbor])
+                    if (currMin.Equals(to))
+                    {
+                        break;
+                    }
+                    else if (String.IsNullOrEmpty(currMin))
+                    {
+                        dist[to] = -1;
+                        break;
+                    }
+                    foreach (string neighbor in graph[currMin].leavingEdges)
+                    {
+                        int alt = dist[currMin] + graph[neighbor].cost;
+
+                        if (alt < dist[neighbor])
                         {
                             dist[neighbor] = alt;
-                            if(prev.ContainsKey(neighbor))
-                            {
-                                prev[neighbor] = curr;
-                            }
-                            else
-                            {
-                                prev.Add(neighbor, curr);
-                            }
                         }
                     }
                 }
-
+                if (dist[to] > 0)
+                {
+                    results.Add(dist[to].ToString());
+                }
+                else
+                {
+                    results.Add("NO");
+                }
             }
 
 
@@ -107,19 +110,21 @@ namespace PS4_5
             }
         }
 
-        private static string FindMin(Dictionary<string, int> g)
+        private static string FindMin(HashSet<string> l, Dictionary<string, int> dist)
         {
-            int minVal = Int32.MaxValue;
-            string res = "";
-            foreach(string str in g.Keys)
+            int min = Int32.MaxValue;
+            string minNode = "";
+
+            foreach (string str in l)
             {
-                if(!graph[str].visited && g[str] < minVal)
+                if (dist[str] < min)
                 {
-                    minVal = g[str];
-                    res = str;
+                    min = dist[str];
+                    minNode = str;
                 }
             }
-            return res;
+
+            return minNode;
         }
     }
 
