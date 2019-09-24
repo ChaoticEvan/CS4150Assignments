@@ -36,20 +36,18 @@ namespace PS5_6
                 graph[currLineTokens[1]].friends.Add(currLineTokens[0]);
             }
 
-            // TODO BFS to find path
+            // Do BFS sourcing from ever rumor
             currLine = Console.ReadLine();
             Int32.TryParse(currLine, out int numRumors);
             for (int k = 0; k < numRumors; k++)
             {
                 currLine = Console.ReadLine();
-                Dictionary<string, string> prev = new Dictionary<string, string>();
                 Dictionary<string, int> dist = new Dictionary<string, int>();
                 SortedSet<string> finalSet = new SortedSet<string>();
 
                 // Reset graph from previous searches
                 foreach (string str in graph.Keys)
                 {
-                    prev[str] = null;
                     dist[str] = Int32.MaxValue;
                     finalSet.Add(str);
                 }
@@ -59,7 +57,7 @@ namespace PS5_6
 
                 Queue<string> q = new Queue<string>();
                 q.Enqueue(currLine);
-                string[] test = new string[numStudents];
+                string[] visitedStudents = new string[numStudents];
                 int idx = 0;
 
                 while (q.Count != 0)
@@ -70,33 +68,32 @@ namespace PS5_6
                         if (dist[friend] == Int32.MaxValue)
                         {
                             finalSet.Remove(friend);
-                            test[idx] = friend;
-                            ++idx;
+ 
                             q.Enqueue(friend);
-                            prev[friend] = currStudent;
                             dist[friend] = dist[currStudent] + 1;
+
+                            visitedStudents[idx] = friend;
+                            ++idx;
                         }
                     }
                 }
 
                 StringBuilder sb = new StringBuilder();
                 sb.Append(currLine);
-
-                for (int i = 0; i < test.Length; i++)
+                for (int i = 0; i < visitedStudents.Length; i++)
                 {
-                    if (!String.IsNullOrEmpty(test[i]))
+                    if (!String.IsNullOrEmpty(visitedStudents[i]))
                     {
-                        sb.Append(" " + test[i]);
+                        sb.Append(" " + visitedStudents[i]);
                     }
                 }
-
                 foreach (string s in finalSet)
                 {
                     sb.Append(" " + s);
                 }
-
                 results.Add(sb);
             }
+
             foreach (StringBuilder sb in results)
             {
                 Console.WriteLine(sb.ToString());
