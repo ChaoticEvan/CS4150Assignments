@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace PS5_6
 {
@@ -10,6 +11,7 @@ namespace PS5_6
         {
             string currLine = "";
             graph = new Dictionary<string, Student>();
+            HashSet<StringBuilder> results = new HashSet<StringBuilder>();
 
             // Add every student to our graph
             currLine = Console.ReadLine();
@@ -34,7 +36,87 @@ namespace PS5_6
                 graph[currLineTokens[1]].friends.Add(currLineTokens[0]);
             }
 
-            // debugging line
+            // TODO BFS to find path
+            currLine = Console.ReadLine();
+            Int32.TryParse(currLine, out int numRumors);
+            for (int k = 0; k < numRumors; k++)
+            {
+                currLine = Console.ReadLine();
+                Dictionary<string, string> prev = new Dictionary<string, string>();
+                Dictionary<string, int> dist = new Dictionary<string, int>();
+
+                // Reset graph from previous searches
+                foreach (string str in graph.Keys)
+                {
+                    prev[str] = null;
+                    dist[str] = Int32.MaxValue;
+                }
+
+                dist[currLine] = 0;
+
+                Queue<string> q = new Queue<string>();
+                q.Enqueue(currLine);
+                string[] test = new string[numStudents];
+                int idx = 0;
+
+                while (q.Count != 0)
+                {
+                    string currStudent = q.Dequeue();
+                    foreach (string friend in graph[currStudent].friends)
+                    {
+                        if (dist[friend] == Int32.MaxValue)
+                        {
+                            test[idx] = friend;
+                            ++idx;
+                            q.Enqueue(friend);
+                            prev[friend] = currStudent;
+                            dist[friend] = dist[currStudent] + 1;
+                        }
+                    }
+                }
+
+                StringBuilder sb = new StringBuilder();
+                sb.Append(currLine);
+
+                for (int distance = 1; distance < numStudents; distance++)
+                {
+                    SortedSet<string> set = new SortedSet<string>();
+
+                    foreach(string s in graph.Keys)
+                    {
+                        if(dist[s] == distance)
+                        {
+                            set.Add(s);
+                        }
+                    }
+
+                    foreach(string s in set)
+                    {
+                        sb.Append(" " + s);
+                    }
+                }
+
+                foreach(string str in graph.Keys)
+                {
+                    SortedSet<string> set = new SortedSet<string>();
+
+                    if(dist[str] == Int32.MaxValue)
+                    {
+                        set.Add(str);
+                    }
+
+                    foreach(string s in set)
+                    {
+                        sb.Append(" " + s);
+                    }
+                }
+
+                results.Add(sb);
+            }
+            foreach (StringBuilder sb in results)
+            {
+                Console.WriteLine(sb.ToString());
+            }
         }
     }
 
@@ -42,8 +124,6 @@ namespace PS5_6
     {
         public HashSet<string> friends { get; set; }
         public string name { get; set; }
-        public bool visited { get; set; }
-
         public Student(string name)
         {
             friends = new HashSet<string>();
