@@ -44,15 +44,18 @@ namespace PS5_6
                 currLine = Console.ReadLine();
                 Dictionary<string, string> prev = new Dictionary<string, string>();
                 Dictionary<string, int> dist = new Dictionary<string, int>();
+                SortedSet<string> finalSet = new SortedSet<string>();
 
                 // Reset graph from previous searches
                 foreach (string str in graph.Keys)
                 {
                     prev[str] = null;
                     dist[str] = Int32.MaxValue;
+                    finalSet.Add(str);
                 }
 
                 dist[currLine] = 0;
+                finalSet.Remove(currLine);
 
                 Queue<string> q = new Queue<string>();
                 q.Enqueue(currLine);
@@ -66,6 +69,7 @@ namespace PS5_6
                     {
                         if (dist[friend] == Int32.MaxValue)
                         {
+                            finalSet.Remove(friend);
                             test[idx] = friend;
                             ++idx;
                             q.Enqueue(friend);
@@ -78,25 +82,14 @@ namespace PS5_6
                 StringBuilder sb = new StringBuilder();
                 sb.Append(currLine);
 
-               for(int i = 0; i < test.Length; i++)
+                for (int i = 0; i < test.Length; i++)
                 {
-                    if(!String.IsNullOrEmpty(test[i]))
+                    if (!String.IsNullOrEmpty(test[i]))
                     {
                         sb.Append(" " + test[i]);
                     }
                 }
 
-                SortedSet<string> finalSet = new SortedSet<string>();
-
-                foreach (string str in graph.Keys)
-                {
-
-                    if(dist[str] == Int32.MaxValue)
-                    {
-                        finalSet.Add(str);
-                    }
-
-                }
                 foreach (string s in finalSet)
                 {
                     sb.Append(" " + s);
