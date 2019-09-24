@@ -86,19 +86,20 @@ namespace PS5_6
                     }
                 }
 
-                foreach(string str in graph.Keys)
+                SortedSet<string> finalSet = new SortedSet<string>();
+
+                foreach (string str in graph.Keys)
                 {
-                    SortedSet<string> set = new SortedSet<string>();
 
                     if(dist[str] == Int32.MaxValue)
                     {
-                        set.Add(str);
+                        finalSet.Add(str);
                     }
 
-                    foreach(string s in set)
-                    {
-                        sb.Append(" " + s);
-                    }
+                }
+                foreach (string s in finalSet)
+                {
+                    sb.Append(" " + s);
                 }
 
                 results.Add(sb);
