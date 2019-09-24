@@ -78,21 +78,11 @@ namespace PS5_6
                 StringBuilder sb = new StringBuilder();
                 sb.Append(currLine);
 
-                for (int distance = 1; distance < numStudents; distance++)
+               for(int i = 0; i < test.Length; i++)
                 {
-                    SortedSet<string> set = new SortedSet<string>();
-
-                    foreach(string s in graph.Keys)
+                    if(!String.IsNullOrEmpty(test[i]))
                     {
-                        if(dist[s] == distance)
-                        {
-                            set.Add(s);
-                        }
-                    }
-
-                    foreach(string s in set)
-                    {
-                        sb.Append(" " + s);
+                        sb.Append(" " + test[i]);
                     }
                 }
 
@@ -122,11 +112,11 @@ namespace PS5_6
 
     class Student
     {
-        public HashSet<string> friends { get; set; }
+        public SortedSet<string> friends { get; set; }
         public string name { get; set; }
         public Student(string name)
         {
-            friends = new HashSet<string>();
+            friends = new SortedSet<string>();
             this.name = name;
         }
     }
