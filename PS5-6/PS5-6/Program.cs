@@ -61,20 +61,26 @@ namespace PS5_6
                 int idx = 0;
 
                 while (q.Count != 0)
-                {
+                {                    
                     string currStudent = q.Dequeue();
+                    SortedSet<string> currLevelFriends = new SortedSet<string>();
                     foreach (string friend in graph[currStudent].friends)
                     {
                         if (dist[friend] == Int32.MaxValue)
                         {
                             finalSet.Remove(friend);
- 
+
                             q.Enqueue(friend);
                             dist[friend] = dist[currStudent] + 1;
 
-                            visitedStudents[idx] = friend;
-                            ++idx;
+                            currLevelFriends.Add(friend);
                         }
+                    }
+
+                    foreach(string currFriend in currLevelFriends)
+                    {
+                        visitedStudents[idx] = currFriend;
+                        ++idx;
                     }
                 }
 
@@ -89,7 +95,10 @@ namespace PS5_6
                 }
                 foreach (string s in finalSet)
                 {
-                    sb.Append(" " + s);
+                    if (!String.IsNullOrEmpty(s))
+                    {
+                        sb.Append(" " + s);
+                    }
                 }
                 results.Add(sb);
             }
@@ -103,11 +112,11 @@ namespace PS5_6
 
     class Student
     {
-        public SortedSet<string> friends { get; set; }
+        public HashSet<string> friends { get; set; }
         public string name { get; set; }
         public Student(string name)
         {
-            friends = new SortedSet<string>();
+            friends = new HashSet<string>();
             this.name = name;
         }
     }
