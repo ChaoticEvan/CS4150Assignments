@@ -43,6 +43,7 @@ namespace PS5_6
             {
                 currLine = Console.ReadLine();
                 Dictionary<string, int> dist = new Dictionary<string, int>();
+                SortedDictionary<int, SortedSet<string>> test = new SortedDictionary<int, SortedSet<string>>();
                 SortedSet<string> finalSet = new SortedSet<string>();
 
                 // Reset graph from previous searches
@@ -57,48 +58,44 @@ namespace PS5_6
 
                 Queue<string> q = new Queue<string>();
                 q.Enqueue(currLine);
-                string[] visitedStudents = new string[numStudents];
-                int idx = 0;
 
                 while (q.Count != 0)
-                {                    
+                {
                     string currStudent = q.Dequeue();
-                    SortedSet<string> currLevelFriends = new SortedSet<string>();
                     foreach (string friend in graph[currStudent].friends)
                     {
-                        if (dist[friend] == Int32.MaxValue)
+                        if (dist[friend] != Int32.MaxValue)
                         {
-                            finalSet.Remove(friend);
-
-                            q.Enqueue(friend);
-                            dist[friend] = dist[currStudent] + 1;
-
-                            currLevelFriends.Add(friend);
+                            continue;
                         }
-                    }
 
-                    foreach(string currFriend in currLevelFriends)
-                    {
-                        visitedStudents[idx] = currFriend;
-                        ++idx;
+                        finalSet.Remove(friend);
+
+                        q.Enqueue(friend);
+                        dist[friend] = dist[currStudent] + 1;
+
+                        if (!test.ContainsKey(dist[friend]))
+                        {
+                            test.Add(dist[friend], new SortedSet<string>());
+                        }
+
+                        test[dist[friend]].Add(friend);
                     }
                 }
 
                 StringBuilder sb = new StringBuilder();
                 sb.Append(currLine);
-                for (int i = 0; i < visitedStudents.Length; i++)
+                foreach (int distance in test.Keys)
                 {
-                    if (!String.IsNullOrEmpty(visitedStudents[i]))
+                    foreach (string student in test[distance])
                     {
-                        sb.Append(" " + visitedStudents[i]);
+                        sb.Append(" " + student);
                     }
                 }
                 foreach (string s in finalSet)
                 {
-                    if (!String.IsNullOrEmpty(s))
-                    {
-                        sb.Append(" " + s);
-                    }
+                    sb.Append(" " + s);
+
                 }
                 results.Add(sb);
             }
