@@ -90,7 +90,7 @@ namespace PS6_6
                     }
                 }
 
-                results.Add(dist[numCorridors - 1]);
+                results.Add(dist[numIntersections - 1]);
             }
 
             foreach(float f in results)
@@ -200,5 +200,5 @@ namespace PS6_6
         } // IsConsistent
     } // PriorityQueue
 
-} // ns
+}
 
