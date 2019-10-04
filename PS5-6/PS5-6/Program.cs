@@ -11,7 +11,7 @@ namespace PS5_6
         {
             string currLine = "";
             graph = new Dictionary<string, Student>();
-            HashSet<StringBuilder> results = new HashSet<StringBuilder>();
+            List<StringBuilder> results = new List<StringBuilder>();
 
             // Add every student to our graph
             currLine = Console.ReadLine();
@@ -21,7 +21,7 @@ namespace PS5_6
                 currLine = Console.ReadLine();
                 string[] currLineTokens = currLine.Split(' ');
 
-                graph.Add(currLineTokens[0], new Student(currLineTokens[0]));
+                graph.Add(currLineTokens[0], new Student());
             }
 
             // Build out the edges given in the second group 
@@ -49,7 +49,6 @@ namespace PS5_6
                 // Reset graph from previous searches
                 foreach (string str in graph.Keys)
                 {
-                    dist[str] = Int32.MaxValue;
                     finalSet.Add(str);
                 }
 
@@ -64,7 +63,7 @@ namespace PS5_6
                     string currStudent = q.Dequeue();
                     foreach (string friend in graph[currStudent].friends)
                     {
-                        if (dist[friend] != Int32.MaxValue)
+                        if (dist.ContainsKey(friend))
                         {
                             continue;
                         }
@@ -110,11 +109,9 @@ namespace PS5_6
     class Student
     {
         public HashSet<string> friends { get; set; }
-        public string name { get; set; }
-        public Student(string name)
+        public Student()
         {
             friends = new HashSet<string>();
-            this.name = name;
         }
     }
 }
