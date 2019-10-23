@@ -17,9 +17,18 @@ namespace PS7_6
                     case "gcd":
                         results.Add(gcd(Int32.Parse(currLineTokens[1]), Int32.Parse(currLineTokens[2])).d.ToString());
                         break;
-                }
-                
 
+                    case "exp":
+                        results.Add(exp(Int32.Parse(currLineTokens[1]), Int32.Parse(currLineTokens[2]), Int32.Parse(currLineTokens[3])).ToString());
+                        break;
+                }
+
+
+            }
+
+            foreach(string s in results)
+            {
+                Console.WriteLine(s);
             }
         }
 
@@ -37,6 +46,26 @@ namespace PS7_6
             {
                 result = gcd(b, a % b);
                 return result;
+            }
+        }
+
+        private static int exp(int x, int y, int N)
+        {
+            if (y == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                int z = exp(x, y / 2, N);
+                if (y % 2 == 0)
+                {
+                    return (int)Math.Pow(z, 2) % N;
+                }
+                else
+                {
+                    return (int)(x * Math.Pow(z, 2)) % N;
+                }
             }
         }
 
