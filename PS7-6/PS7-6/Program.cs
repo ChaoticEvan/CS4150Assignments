@@ -134,10 +134,10 @@ namespace PS7_6
         private static bool testPrimality(int N)
         {
             Random rand = new Random();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 100; i++)
             {
                 int currTest = rand.Next(N - 1) + 1;
-                int pow = (int)Math.Pow(currTest, N - 1);
+                double pow = Math.Pow(currTest, N - 1);
                 if (pow % N != 1)
                 {
                     return false;
