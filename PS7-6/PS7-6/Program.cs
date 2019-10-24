@@ -131,6 +131,12 @@ namespace PS7_6
             }
         }
 
+        /// <summary>
+        /// Private helper method that runs 100 tests of the primality
+        /// test described in the slides
+        /// </summary>
+        /// <param name="N">Number to test</param>
+        /// <returns>bool if number passes all 100 tests</returns>
         private static bool testPrimality(int N)
         {
             Random rand = new Random();
@@ -146,6 +152,31 @@ namespace PS7_6
             return true;
         }
 
+
+        private static KeyContainer key(int p, int q)
+        {
+            KeyContainer result = new KeyContainer();
+            result.modulus = p * q;
+            int fi = (p - 1) * (q - 1);
+            result.publicExponent = findE(fi);
+
+            return result;
+        }
+
+        private static int findE(int fi)
+        {
+            for (int i = 0; i < 3120; i++)
+            {
+                if(gcd(fi, i).d == 1)
+                {
+                    return i;
+                }
+            }
+
+            // SHould never get here
+            return -99;
+        }
+
         /// <summary>
         /// Struct for replicating Python's Triplet
         /// </summary>
@@ -154,6 +185,15 @@ namespace PS7_6
             public int x { get; set; }
             public int y { get; set; }
             public int d { get; set; }
+        }
+        /// <summary>
+        /// Struct for replicating Python's triplet for the RSA key method
+        /// </summary>
+        private struct KeyContainer
+        {
+            public double modulus { get; set; }
+            public int publicExponent { get; set; }
+            public int privateExponent { get; set; }
         }
     }
 }
