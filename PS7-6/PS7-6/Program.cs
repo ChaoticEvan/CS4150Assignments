@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace PS7_6
 {
@@ -8,7 +9,7 @@ namespace PS7_6
         static void Main(string[] args)
         {
             string currLine = "";
-            HashSet<string> results = new HashSet<string>();
+            List<string> results = new List<string>();
 
             // Loop through input and perform arithmetic based on given case for each line
             while (!String.IsNullOrEmpty(currLine = Console.ReadLine()))
@@ -31,6 +32,10 @@ namespace PS7_6
                     case "isprime":
                         results.Add(isPrime(Int32.Parse(currLineTokens[1])));
                         break;
+
+                    case "key":
+                        results.Add(key(Int32.Parse(currLineTokens[1]), Int32.Parse(currLineTokens[2])).ToString());
+                        break;
                 }
             }
 
@@ -49,8 +54,10 @@ namespace PS7_6
         /// <returns>Python equivalent of Triplet</returns>
         private static GcdContainer gcd(int a, int b)
         {
+            int absA = Math.Abs(a);
+            int absB = Math.Abs(b);
             GcdContainer result = new GcdContainer();
-            if (b == 0)
+            if (absB == 0)
             {
                 result.x = 1;
                 result.y = 0;
@@ -59,9 +66,9 @@ namespace PS7_6
             }
             else
             {
-                GcdContainer temp = gcd(b, a % b);
+                GcdContainer temp = gcd(absB, mod(absA, absB));
                 result.x = temp.y;
-                result.y = temp.x - (a / b) * temp.y;
+                result.y = temp.x - (absA / absB) * temp.y;
                 result.d = temp.d;
                 return result;
             }
@@ -85,11 +92,11 @@ namespace PS7_6
                 int z = exp(x, y / 2, N);
                 if (y % 2 == 0)
                 {
-                    return (int)Math.Pow(z, 2) % N;
+                    return mod((int)Math.Pow(z, 2), N);
                 }
                 else
                 {
-                    return (int)(x * Math.Pow(z, 2)) % N;
+                    return mod((int)(x * Math.Pow(z, 2)), N);
                 }
             }
         }
@@ -105,12 +112,18 @@ namespace PS7_6
             GcdContainer cont = gcd(a, N);
             if (cont.d == 1)
             {
-                return (cont.x % N).ToString();
+                return mod(cont.x, N).ToString();
             }
             else
             {
                 return "none";
             }
+        }
+
+        private static int mod(int x, int m)
+        {
+            int r = x % m;
+            return r < 0 ? r + m : r;
         }
 
         /// <summary>
@@ -138,17 +151,25 @@ namespace PS7_6
         /// <param name="N">Number to test</param>
         /// <returns>bool if number passes all 100 tests</returns>
         private static bool testPrimality(int N)
-        {
-            Random rand = new Random();
-            for (int i = 0; i < 100; i++)
+        {            
+            double pow2 = Math.Pow(2, N - 1);
+            if (pow2 % N != 1)
             {
-                int currTest = rand.Next(N - 1) + 1;
-                double pow = Math.Pow(currTest, N - 1);
-                if (pow % N != 1)
-                {
-                    return false;
-                }
+                return false;
             }
+
+            double pow3 = Math.Pow(3, N - 1);
+            if (pow3 % N != 1)
+            {
+                return false;
+            }
+
+            double pow5 = Math.Pow(5, N - 1);
+            if (pow5 % N != 1)
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -159,21 +180,21 @@ namespace PS7_6
             result.modulus = p * q;
             int fi = (p - 1) * (q - 1);
             result.publicExponent = findE(fi);
-
+            result.privateExponent = Int32.Parse(inverse(result.publicExponent, fi));
             return result;
         }
 
         private static int findE(int fi)
         {
-            for (int i = 0; i < 3120; i++)
+            for (int i = 2; i < 3120; i++)
             {
-                if(gcd(fi, i).d == 1)
+                if (gcd(fi, i).d == 1)
                 {
                     return i;
                 }
             }
 
-            // SHould never get here
+            // Should never get here
             return -99;
         }
 
@@ -194,6 +215,12 @@ namespace PS7_6
             public double modulus { get; set; }
             public int publicExponent { get; set; }
             public int privateExponent { get; set; }
+
+            public override string ToString()
+            {
+                string result = this.modulus + " " + this.publicExponent + " " + this.privateExponent;
+                return result;
+            }
         }
     }
 }
