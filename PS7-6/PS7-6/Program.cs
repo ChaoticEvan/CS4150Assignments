@@ -22,7 +22,7 @@ namespace PS7_6
                         break;
 
                     case "exp":
-                        results.Add(exp(Int32.Parse(currLineTokens[1]), Int32.Parse(currLineTokens[2]), Int32.Parse(currLineTokens[3])).ToString());
+                        results.Add(exp(long.Parse(currLineTokens[1]), long.Parse(currLineTokens[2]), long.Parse(currLineTokens[3])).ToString());
                         break;
 
                     case "inverse":
@@ -81,7 +81,7 @@ namespace PS7_6
         /// <param name="y"></param>
         /// <param name="N"></param>
         /// <returns>Answer</returns>
-        private static int exp(int x, int y, int N)
+        private static long exp(long x, long y, long N)
         {
             if (y == 0)
             {
@@ -89,7 +89,7 @@ namespace PS7_6
             }
             else
             {
-                int z = exp(x, y / 2, N);
+                long z = exp(x, y / 2, N);
                 if (y % 2 == 0)
                 {
                     return mod((int)Math.Pow(z, 2), N);
@@ -126,6 +126,12 @@ namespace PS7_6
             return r < 0 ? r + m : r;
         }
 
+        private static long mod(long x, long m)
+        {
+            long r = x % m;
+            return r < 0 ? r + m : r;
+        }
+
         /// <summary>
         /// Algorithm for finding if N is Prime from slides
         /// </summary>
@@ -151,7 +157,7 @@ namespace PS7_6
         /// <param name="N">Number to test</param>
         /// <returns>bool if number passes all 100 tests</returns>
         private static bool testPrimality(int N)
-        {            
+        {
             double pow2 = Math.Pow(2, N - 1);
             if (pow2 % N != 1)
             {
