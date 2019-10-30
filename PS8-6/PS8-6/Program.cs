@@ -14,6 +14,7 @@ namespace PS8_6
             Int32.TryParse(currLineTokens[0], out int numOfPeople);
             Int32.TryParse(currLineTokens[1], out int numMinutes);
 
+            // Build out dictionary of people and money
             SortedDictionary<int, MaxHeap> dict = new SortedDictionary<int, MaxHeap>();
             for(int i = 0; i < numOfPeople; ++i)
             {
@@ -34,9 +35,10 @@ namespace PS8_6
                 }
             }
 
+            // Greedy algorithm to calculate result
             int result = 0;
-            for(int i = 0; i < numMinutes; ++i)
-            {
+            for(int i = 0; i <= numMinutes; ++i)
+            {                
                 if(!dict.ContainsKey(i))
                 {
                     continue;
