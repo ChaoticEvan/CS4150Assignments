@@ -13,7 +13,11 @@ namespace PS10_4
 
             Int32.TryParse(currLineTokens[0], out int numOfRows);
             BuildGallery(numOfRows);
-            return;
+
+            // TO DO
+            // BUILD ALGORITHM TO SOLVE
+
+            Console.WriteLine(SumOpenRooms());
         }
 
         private static void BuildGallery(int numOfRows)
@@ -30,12 +34,14 @@ namespace PS10_4
                 gallery[i, 0] = new Node()
                 {
                     value = Int32.Parse(currLineTokens[0]),
-                    canClose = true
+                    canClose = true,
+                    isClosed = false
                 };
                 gallery[i, 1] = new Node()
                 {
                     value = Int32.Parse(currLineTokens[1]),
-                    canClose = true
+                    canClose = true,
+                    isClosed = false
                 };
             }
         }
@@ -47,6 +53,9 @@ namespace PS10_4
         {
             StringBuilder sb = new StringBuilder();
 
+            // Divide the length by 2 because we have 2 columns, and
+            // the length is the number of elements in all columns and
+            // all rows.
             for (int i = 0; i < (gallery.Length/2); ++i)
             {
                 sb.AppendLine(gallery[i, 0].value + " " + gallery[i, 1].value);
@@ -54,11 +63,33 @@ namespace PS10_4
 
             Console.WriteLine(sb.ToString());
         }
+
+        private static int SumOpenRooms()
+        {
+            int sum = 0;
+            // Divide the length by 2 because we have 2 columns, and
+            // the length is the number of elements in all columns and
+            // all rows.
+            for (int i = 0; i < (gallery.Length / 2); ++i)
+            {
+                if(!gallery[i, 0].isClosed)
+                {
+                    sum += gallery[i, 0].value;
+                }
+                if(!gallery[i, 1].isClosed)
+                {
+                    sum += gallery[i, 1].value;
+                }
+            }
+            return sum;
+        }
     }
 
     public struct Node
     {
         public int value { get; set; }
         public bool canClose { get; set; }
+        public bool isClosed { get; set; }
+
     }
 }
