@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace PS10_4
 {
@@ -11,8 +12,14 @@ namespace PS10_4
             string[] currLineTokens = currLine.Split(" ");
 
             Int32.TryParse(currLineTokens[0], out int numOfRows);
+            BuildGallery(numOfRows);
+            return;
+        }
 
-
+        private static void BuildGallery(int numOfRows)
+        {
+            string currLine = "";
+            string[] currLineTokens;
             gallery = new Node[numOfRows, 2];
 
             for (int i = 0; i < numOfRows; ++i)
@@ -31,6 +38,21 @@ namespace PS10_4
                     canClose = true
                 };
             }
+        }
+
+        /// <summary>
+        /// Method only for testing that the gallery is printing correctly.
+        /// </summary>
+        private static void PrintGallery()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < (gallery.Length/2); ++i)
+            {
+                sb.AppendLine(gallery[i, 0].value + " " + gallery[i, 1].value);
+            }
+
+            Console.WriteLine(sb.ToString());
         }
     }
 
