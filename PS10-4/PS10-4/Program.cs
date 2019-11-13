@@ -21,9 +21,7 @@ namespace PS10_4
             SetupCache(numOfRows);
             // TO DO
             // USE DYNAMIC PROGRAMMING ALGO
-
-
-            Console.WriteLine(SumOpenRooms());
+            Console.WriteLine(MaxValues(0, -1, numRoomsToClose));
         }
 
         /// <summary>
