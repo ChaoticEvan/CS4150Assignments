@@ -7,6 +7,7 @@ namespace PS10_4
     class Program
     {
         private static Node[,] gallery;
+        private static int[,] cache;
         private static SortedDictionary<int, HashSet<Node>> values;
 
         static void Main(string[] args)
@@ -17,34 +18,18 @@ namespace PS10_4
             Int32.TryParse(currLineTokens[0], out int numOfRows);
             Int32.TryParse(currLineTokens[1], out int numRoomsToClose);
             BuildGallery(numOfRows);
-
+            SetupCache(numOfRows);
             // TO DO
-            // DEBUG OPEN/CLOSED ROOMS
-            int currRoomsClosed = 0;
-            foreach (int key in values.Keys)
-            {
-                foreach (Node node in values[key])
-                {
-                    Node currNode = gallery[node.row, node.col];
+            // USE DYNAMIC PROGRAMMING ALGO
 
-                    if (currNode.canClose && !currNode.isClosed)
-                    {
-                        currNode.isClosed = true;
-                        CloseNeighbors(currNode);
-
-                        gallery[currNode.row, node.col] = currNode;
-                        ++currRoomsClosed;
-                    }
-                }
-                if (currRoomsClosed == numRoomsToClose)
-                {
-                    break;
-                }
-            }
 
             Console.WriteLine(SumOpenRooms());
         }
 
+        /// <summary>
+        /// Helper method for closing the proper neighbors
+        /// </summary>
+        /// <param name="currNode">Node to close</param>
         private static void CloseNeighbors(Node currNode)
         {
             // Can't close neighbor in same row
@@ -78,6 +63,11 @@ namespace PS10_4
             }
         }
 
+        /// <summary>
+        /// Helper method for building 2D array
+        /// from the input given
+        /// </summary>
+        /// <param name="numOfRows">Number of rows to read from input</param>
         private static void BuildGallery(int numOfRows)
         {
             string currLine = "";
@@ -127,10 +117,56 @@ namespace PS10_4
                     values[rightVal] = new HashSet<Node>();
                     values[rightVal].Add(gallery[i, 1]);
                 }
-            }
+            }            
         }
 
+        private static int MaxValues(int r, int unclosableRoom, int numRooms)
+        {
+            if (cache[r, 0] != -99 && cache[r, 1] != -99)
+            {
+                int result = 0;
+                if (!gallery[r, 0].isClosed)
+                {
+                    result += cache[r, 0];
+                }
+                if (!gallery[r, 1].isClosed)
+                {
+                    result += cache[r, 1];
+                }
+                return result;
+            }
 
+            int maxValue = 0;
+            for (int i = r; i > 0; --i)
+            {
+                int leftProfit = gallery[i, 0].value + MaxValues(r + 1, -1, numRooms - 1);
+                int rightProfit = gallery[i, 1].value + MaxValues(r + 1, -1, numRooms - 1);
+                if (unclosableRoom == 0)
+                {
+
+                }
+                else if (unclosableRoom == 1)
+                {
+
+                }
+            }
+            return maxValue;
+        }
+
+        /// <summary>
+        /// Initialize all values in cache to -99
+        /// for null checks
+        /// </summary>
+        /// <param name="numOfRows">Number of rows from input</param>
+        private static void SetupCache(int numOfRows)
+        {
+            cache = new int[numOfRows, 2];
+            for(int i = 0; i < numOfRows; ++i)
+            {
+                cache[i, 0] = -99;
+                cache[i, 1] = -99;
+            }
+        }
         /// <summary>
         /// Method only for testing that the gallery is printing correctly.
         /// </summary>
