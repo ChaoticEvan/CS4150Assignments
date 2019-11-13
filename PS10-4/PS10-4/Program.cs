@@ -25,18 +25,20 @@ namespace PS10_4
             {
                 foreach (Node node in values[key])
                 {
-                    if(currRoomsClosed == numRoomsToClose)
-                    {
-                        break;
-                    }
                     Node currNode = gallery[node.row, node.col];
 
                     if (currNode.canClose && !currNode.isClosed)
                     {
                         currNode.isClosed = true;
                         CloseNeighbors(currNode);
+
+                        gallery[currNode.row, node.col] = currNode;
                         ++currRoomsClosed;
                     }
+                }
+                if (currRoomsClosed == numRoomsToClose)
+                {
+                    break;
                 }
             }
 
@@ -81,7 +83,7 @@ namespace PS10_4
             string currLine = "";
             string[] currLineTokens;
             gallery = new Node[numOfRows, 2];
-            values = new SortedDictionary<int, HashSet<Node>>(new DescendingComparer<int>());
+            values = new SortedDictionary<int, HashSet<Node>>();
 
             for (int i = 0; i < numOfRows; ++i)
             {
@@ -180,13 +182,5 @@ namespace PS10_4
         public bool canClose { get; set; }
         public bool isClosed { get; set; }
 
-    }
-
-    class DescendingComparer<T> : IComparer<T> where T : IComparable<T>
-    {
-        public int Compare(T x, T y)
-        {
-            return y.CompareTo(x);
-        }
     }
 }
