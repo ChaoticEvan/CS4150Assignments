@@ -17,7 +17,6 @@ namespace PS10_4
             Int32.TryParse(currLineTokens[0], out int numOfRows);
             Int32.TryParse(currLineTokens[1], out int numRoomsToClose);
             BuildGallery(numOfRows);
-
             // TO DO
             // DEBUG OPEN/CLOSED ROOMS
             int currRoomsClosed = 0;
@@ -143,7 +142,7 @@ namespace PS10_4
             // all rows.
             for (int i = 0; i < (gallery.Length / 2); ++i)
             {
-                sb.AppendLine(gallery[i, 0].value + " " + gallery[i, 1].value);
+                sb.AppendLine(gallery[i, 0].isClosed + " " + gallery[i, 1].isClosed);
             }
 
             Console.WriteLine(sb.ToString());
