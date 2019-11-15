@@ -115,40 +115,67 @@ namespace PS10_4
                     values[rightVal] = new HashSet<Node>();
                     values[rightVal].Add(gallery[i, 1]);
                 }
-            }            
+            }
         }
 
         private static int MaxValues(int r, int unclosableRoom, int numRooms)
         {
-            if (cache[r, 0] != -99 && cache[r, 1] != -99)
+            if (r >= gallery.Length / 2)
             {
-                int result = 0;
-                if (!gallery[r, 0].isClosed)
-                {
-                    result += cache[r, 0];
-                }
-                if (!gallery[r, 1].isClosed)
-                {
-                    result += cache[r, 1];
-                }
-                return result;
+                return 0;
             }
 
-            int maxValue = 0;
-            for (int i = r; i > 0; --i)
+            if (unclosableRoom == 0 && cache[r, 0] != -99)
             {
-                int leftProfit = gallery[i, 0].value + MaxValues(r + 1, -1, numRooms - 1);
-                int rightProfit = gallery[i, 1].value + MaxValues(r + 1, -1, numRooms - 1);
-                if (unclosableRoom == 0)
+                return cache[r, 0];
+            }
+            else if (unclosableRoom == 1 && cache[r, 1] != -99)
+            {
+                return cache[r, 1];
+            }
+            else if (cache[r, 0] != -99 && cache[r, 1] != -99)
+            {
+                return cache[r, 0] + cache[r, 1];
+            }
+            int result = -99;
+            if (numRooms == (gallery.Length / 2) - r)
+            {
+                switch (unclosableRoom)
                 {
-
-                }
-                else if (unclosableRoom == 1)
-                {
-
+                    case -1:
+                        result = Math.Max(gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1), gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1));
+                        cache[r, 0] = result;
+                        break;
+                    case 0:
+                        result = gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1);
+                        cache[r, 0] = result;
+                        break;
+                    case 1:
+                        result = gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1);
+                        cache[r, 1] = result;
+                        break;
                 }
             }
-            return maxValue;
+            if (numRooms < (gallery.Length / 2) - r)
+            {
+                switch (unclosableRoom)
+                {
+                    case -1:
+                        result = Math.Max(gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1), Math.Max(gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms), gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1)));
+                        cache[r, 0] = result;
+                        break;
+                    case 0:
+                        result = Math.Max(gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1), gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms));
+                        cache[r, 0] = result;
+                        break;
+                    case 1:
+                        result = Math.Max(gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1), gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms));
+                        cache[r, 1] = result;
+                        break;
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -159,7 +186,7 @@ namespace PS10_4
         private static void SetupCache(int numOfRows)
         {
             cache = new int[numOfRows, 2];
-            for(int i = 0; i < numOfRows; ++i)
+            for (int i = 0; i < numOfRows; ++i)
             {
                 cache[i, 0] = -99;
                 cache[i, 1] = -99;
