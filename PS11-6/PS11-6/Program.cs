@@ -5,7 +5,15 @@ namespace PS11_6
 {
     class Program
     {
+        /// <summary>
+        /// Hashset of exercises from input
+        /// </summary>
         public static HashSet<List<int>> exercises;
+
+        /// <summary>
+        /// List of solutions
+        /// </summary>
+        public static List<string> solutions;
         static void Main(string[] args)
         {
             string currLine = "";
@@ -13,7 +21,17 @@ namespace PS11_6
 
             currLine = Console.ReadLine();
             Int32.TryParse(currLine, out int numExercises);
+            
+            // Reads all input
             BuildExercises(numExercises);
+            
+            // TODO extract this to helper method
+            // Iterate over our inputs and calculate solution
+            foreach (List<int> list in exercises)
+            {
+                // TODO Use dynamic programming to calculate this
+                // The hints on the assignment page, seem to be helpful.
+            }
             return;
         }
 
@@ -40,7 +58,8 @@ namespace PS11_6
                 }
 
                 // Add our entry into our dictionary to do the work on later.
-                // The length of temp is going to be our number of steps
+                // The length of temp is going to be our number of steps for 
+                // future reference.
                 exercises.Add(temp);
             }
         }
