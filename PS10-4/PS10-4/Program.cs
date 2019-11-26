@@ -8,75 +8,27 @@ namespace PS10_4
     {
         private static Node[,] gallery;
         private static SortedDictionary<int, HashSet<Node>> values;
+        private static Dictionary<string, int> cache;
 
         static void Main(string[] args)
         {
             string currLine = Console.ReadLine();
             string[] currLineTokens = currLine.Split(" ");
-
+            cache = new Dictionary<string, int>();
             Int32.TryParse(currLineTokens[0], out int numOfRows);
             Int32.TryParse(currLineTokens[1], out int numRoomsToClose);
             BuildGallery(numOfRows);
             // TO DO
-            // DEBUG OPEN/CLOSED ROOMS
-            int currRoomsClosed = 0;
-            foreach (int key in values.Keys)
-            {
-                foreach (Node node in values[key])
-                {
-                    Node currNode = gallery[node.row, node.col];
-
-                    if (currNode.canClose && !currNode.isClosed)
-                    {
-                        currNode.isClosed = true;
-                        CloseNeighbors(currNode);
-
-                        gallery[currNode.row, node.col] = currNode;
-                        ++currRoomsClosed;
-                    }
-                }
-                if (currRoomsClosed == numRoomsToClose)
-                {
-                    break;
-                }
-            }
-
-            Console.WriteLine(SumOpenRooms());
+            // USE DYNAMIC PROGRAMMING ALGO
+            Console.WriteLine(MaxValues(0, -1, numRoomsToClose));
         }
 
-        private static void CloseNeighbors(Node currNode)
-        {
-            // Can't close neighbor in same row
-            if (currNode.col == 1)
-            {
-                gallery[currNode.row, 0].canClose = false;
-            }
-            else
-            {
-                gallery[currNode.row, 1].canClose = false;
-            }
-
-            // Can't close diagonal above
-            if (currNode.row > 0 && currNode.col == 0)
-            {
-                gallery[currNode.row - 1, 1].canClose = false;
-            }
-            else if (currNode.row > 0 && currNode.col == 1)
-            {
-                gallery[currNode.row - 1, 0].canClose = false;
-            }
-
-            // Can't close diagonal below
-            if (currNode.row < (gallery.Length / 2) - 1 && currNode.col == 0)
-            {
-                gallery[currNode.row + 1, 1].canClose = false;
-            }
-            else if (currNode.row < (gallery.Length / 2) - 1 && currNode.col == 1)
-            {
-                gallery[currNode.row + 1, 0].canClose = false;
-            }
-        }
-
+        
+        /// <summary>
+        /// Helper method for building 2D array
+        /// from the input given
+        /// </summary>
+        /// <param name="numOfRows">Number of rows to read from input</param>
         private static void BuildGallery(int numOfRows)
         {
             string currLine = "";
@@ -129,6 +81,52 @@ namespace PS10_4
             }
         }
 
+        private static int MaxValues(int r, int unclosableRoom, int numRooms)
+        {
+            if (r >= gallery.Length / 2)
+            {
+                return 0;
+            }
+
+            string cacheKey = r + " " + unclosableRoom + " " + numRooms;
+            if (cache.ContainsKey(cacheKey))
+            {
+                return cache[cacheKey];
+            }
+            int result = -99;
+            if (numRooms == (gallery.Length / 2) - r)
+            {
+                switch (unclosableRoom)
+                {
+                    case -1:
+                        result = Math.Max(gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1), gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1));
+                        break;
+                    case 0:
+                        result = gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1);
+                        break;
+                    case 1:
+                        result = gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1);
+                        break;
+                }
+            }
+            else if (numRooms < (gallery.Length / 2) - r)
+            {
+                switch (unclosableRoom)
+                {
+                    case -1:
+                        result = Math.Max(gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1), Math.Max(gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms), gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1)));
+                        break;
+                    case 0:
+                        result = Math.Max(gallery[r, 0].value + MaxValues(r + 1, 0, numRooms - 1), gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms));
+                        break;
+                    case 1:
+                        result = Math.Max(gallery[r, 1].value + MaxValues(r + 1, 1, numRooms - 1), gallery[r, 0].value + gallery[r, 1].value + MaxValues(r + 1, -1, numRooms));
+                        break;
+                }
+            }
+            cache.Add(cacheKey, result);
+            return result;
+        }
 
         /// <summary>
         /// Method only for testing that the gallery is printing correctly.
