@@ -14,6 +14,11 @@ namespace PS11_6
         /// List of solutions
         /// </summary>
         public static List<string> solutions;
+
+        /// <summary>
+        /// Main method used for solving the Spiderman's Workout Kattis problem.
+        /// </summary>
+        /// <param name="args">UNUSED</param>
         static void Main(string[] args)
         {
             string currLine = "";
