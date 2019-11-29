@@ -5,6 +5,7 @@ namespace PS11_6
 {
     class Program
     {
+
         /// <summary>
         /// Hashset of exercises from input
         /// </summary>
@@ -16,21 +17,6 @@ namespace PS11_6
         public static List<string> solutions;
 
         /// <summary>
-        /// Cache containg attempted solutions
-        /// </summary>
-        public static Dictionary<string, string> strCache;
-
-        /// <summary>
-        /// Cache containing integer solutions
-        /// </summary>
-        public static Dictionary<string, int> iCache;
-
-        /// <summary>
-        /// Instance variable for finding solution
-        /// </summary>
-        public static int[] currList;
-
-        /// <summary>
         /// Main method used for solving the Spiderman's Workout Kattis problem.
         /// </summary>
         /// <param name="args">UNUSED</param>
@@ -38,8 +24,7 @@ namespace PS11_6
         {
             string currLine = "";
             exercises = new HashSet<int[]>();
-            strCache = new Dictionary<string, string>();
-            iCache = new Dictionary<string, int>();
+            solutions = new List<string>();
 
             currLine = Console.ReadLine();
             Int32.TryParse(currLine, out int numExercises);
@@ -47,17 +32,12 @@ namespace PS11_6
             // Reads all input
             BuildExercises(numExercises);
 
-            // TODO extract this to helper method
-            // Iterate over our inputs and calculate solution
             foreach (int[] list in exercises)
             {
-                // TODO Use dynamic programming to calculate this
-                // The hints on the assignment page, seem to be helpful.
-                currList = list;
-                solutions.Add(strCache["0 0"]);
+                solutions.Add(CalcSolution(list));
             }
 
-            foreach(string s in solutions)
+            foreach (string s in solutions)
             {
                 Console.WriteLine(s);
             }
@@ -92,47 +72,105 @@ namespace PS11_6
             }
         }
 
-        public static int RecursiveCall(int currHeight, int idx, int minOfMaxHeight, bool wentUp)
+        public static string CalcSolution(int[] list)
         {
-            string key = idx + " " + currHeight;
-
-            // if we are at our last index take current position and minus end, if we don't equal 0 then impossible
-            if (idx == currList.Length - 1 && currHeight - currList[idx] != 0)
+            // Build out necessary variables
+            int max = 0;
+            int largest = 0;
+            foreach (int i in list)
             {
-                // Cache impossible
-                if(strCache.ContainsKey(key))
+                max += i;
+                if (i > largest)
                 {
-                    strCache[key] = "IMPOSSIBLE";
-                    iCache[key] = -99;
+                    largest = i;
                 }
-                else
-                {
-                    strCache.Add(key, "IMPOSSIBLE");
-                    iCache.Add(key, -99);
-                }
-                return int.MaxValue;
             }
-            // Else pre-pend the 0 to our solution string
+
+            largest += max + 1;
+
+            // These two 2D arrays act as our cache.
+            // One for keeping track of the numbers, and
+            // one for keeping track of the path we took.
+            int[,] pos = new int[list.Length + 1, largest];
+            string[,] directions = new string[list.Length + 1, largest];
+
+            // Fill our number cache with our calculated max,
+            // so we only replace it with possible better values
+            for (int i = 0; i < list.Length + 1; ++i)
+            {
+                for (int j = 0; j < largest; ++j)
+                {
+                    pos[i, j] = max;
+                }
+            }
+
+            // Our initial best height is 0
+            pos[0, 0] = 0;
+
+            // Iterative solution, as opposed to recursive solution.
+            // Really struggled with the logic for the recursion, but 
+            // this iteration made much more sense to me.
+            for (int i = 0; i < list.Length; ++i)
+            {
+                for (int j = 0; j < max; ++j)
+                {
+                    int currHeight = pos[i, j];
+                    int upTemp = j + list[i];
+                    int downTemp = j - list[i];
+
+                    // If going up is viable and is our better solution
+                    // cache it
+                    if (pos[i + 1, upTemp] > Math.Max(upTemp, currHeight))
+                    {
+                        pos[i + 1, upTemp] = Math.Max(upTemp, currHeight);
+                        directions[i + 1, upTemp] = "U";
+                    }
+
+
+                    // If going down is viable and is our better solution
+                    // cache it
+                    if (downTemp >= 0 && pos[i + 1, downTemp] > currHeight)
+                    {
+                        pos[i + 1, downTemp] = currHeight;
+                        directions[i + 1, downTemp] = "D";
+                    }
+                }
+            }
+
+            string currResult = "";
+            int height = pos[list.Length, 0];
+            // If there is a solution...
+            if (height != max)
+            {
+                int dist = 0;
+
+                // Go through our list and find the 
+                // path we took to obtain a solution
+                for (int i = list.Length; i > 0; --i)
+                {
+                    if (directions[i, dist].Equals("U"))
+                    {
+                        dist -= list[i - 1];
+                        currResult += "U";
+                    }
+                    else
+                    {
+                        dist += list[i - 1];
+                        currResult += "D";
+                    }
+                }
+
+                // Reverse the our path, because we had to go through our list backwards.
+                // This method of reversing a string was recommended at https://stackoverflow.com/questions/228038/best-way-to-reverse-a-string
+                char[] revSol = currResult.ToCharArray();
+                Array.Reverse(revSol);
+                return new string(revSol);
+            }
+            // If our cached height is the max then we know there is no solution
             else
             {
-                if(strCache.ContainsKey(key))
-                {
-                    strCache[key] = "D";
-                    iCache[key] = minOfMaxHeight;
-                }
-                else
-                {
-                    strCache.Add(key, "D");
-                    iCache.Add(key, minOfMaxHeight);
-                }
-                return minOfMaxHeight;
+                return "IMPOSSIBLE";
             }
-
-            // Calculate min of up and down
-            // recurse on idx + 1, minOfMaxHeight, wentUp = true for up false for down, max height so far 
-            // The key for our cache on index and current height and our minOfMaxHeight should be our value
-            // When we get the min we pre-pend u or d to our string
-            // Cache on recursive calls in both integer cache and string cache
         }
     }
 }
